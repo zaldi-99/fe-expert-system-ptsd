@@ -1,0 +1,15 @@
+.question-box {
+  border: 1px solid blue;
+  padding: 2rem;
+  height: fit-content;
+}
+
+.question-text {
+  border: 1px solid green;
+}
+
+.question-answer {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+}

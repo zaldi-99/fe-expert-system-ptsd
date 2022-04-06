@@ -1,0 +1,33 @@
+.detection-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detection-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  max-width: 600px;
+}
+
+.detection-question {
+  text-align: justify;
+}
+
+.detection-answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detection-answer-choice {
+  font-size: 20px;
+}
+
+.next-btn {
+  margin-top: 1rem;
+}

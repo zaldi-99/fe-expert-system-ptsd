@@ -1,26 +1,24 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import QuestionBox from "../components/QuestionBox";
+import React from "react";
+import { Link } from "react-router-dom";
+// import component
+
+// import style
 import "./Home.css";
 
 const Home = () => {
-  // const [gejala, setGejala] = useState([]);
-
-  // const getAllGejala = async () => {
-  //   const res = await axios("http://localhost:3001/api/gejala");
-  //   setGejala(res.data);
-  // };
-
-  // useEffect(() => {
-  //   getAllGejala();
-  // }, []);
-
   return (
     <>
-      <Navbar />
-      <div className="home-question">
-        <QuestionBox />
+      <div className="homepage">
+        <div className="homepage-title">
+          <h1>Selamat Datang</h1>
+          <p className="homepage-subtitle">
+            Aplikasi ini bertujuan untuk melakukan deteksi dini dari gangguan
+            mental post-traumatic stress disorder
+          </p>
+        </div>
+        <Link to="/detection">
+          <div className="btn">Mulai Test</div>
+        </Link>
       </div>
     </>
   );

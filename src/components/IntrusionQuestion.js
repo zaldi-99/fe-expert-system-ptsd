@@ -1,4 +1,5 @@
 import React from "react";
+import AnswerChoices from "./AnswerChoices";
 
 const IntrusionQuestion = () => {
   return (
@@ -11,12 +12,8 @@ const IntrusionQuestion = () => {
           </h1>
         </div>
         <div className="detection-answer">
-          <div className="detection-answer-choice">
-            <input type="radio" name="Ya" id="" /> Ya
-          </div>
-          <div className="detection-answer-choice">
-            <input type="radio" name="Tidak" id="" /> Tidak
-          </div>
+          <AnswerChoices weight={1} answer="Ya" />
+          <AnswerChoices weight={0} answer="Tidak" />
         </div>
         <div className="detection-question">
           <h1>
@@ -24,12 +21,8 @@ const IntrusionQuestion = () => {
           </h1>
         </div>
         <div className="detection-answer">
-          <div className="detection-answer-choice">
-            <input type="radio" name="Ya" id="" /> Ya
-          </div>
-          <div className="detection-answer-choice">
-            <input type="radio" name="Tidak" id="" /> Tidak
-          </div>
+          <AnswerChoices weight={1} answer="Ya" />
+          <AnswerChoices weight={0} answer="Tidak" />
         </div>
       </form>
     </div>

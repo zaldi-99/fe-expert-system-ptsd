@@ -10,8 +10,8 @@ const Detection = () => {
     <div className="detection-page">
       <div className="detection-box">
         <TraumaticQuestion />
-        {/* <IntrusionQuestion />
-        <AvoidanceQuestion /> */}
+        <IntrusionQuestion />
+        <AvoidanceQuestion />
         <div className="next-btn">Selanjutnya</div>
       </div>
     </div>

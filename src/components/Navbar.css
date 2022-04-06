@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding: 10px 40px;
   align-items: center;
-  background-color: beige;
+  background-color: #f7f5f2;
 }
 
 .nav-logo {
@@ -23,7 +23,7 @@
 }
 
 .nav-link {
-  color: var(--color-red);
+  color: black;
   text-decoration: none;
   cursor: pointer;
   padding: 5px;

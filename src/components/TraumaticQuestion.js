@@ -1,14 +1,14 @@
 import React from "react";
 import AnswerChoices from "./AnswerChoices";
 
-const TraumaticQuestion = () => {
+const TraumaticQuestion = ({ question }) => {
   return (
     <div>
       <form>
         <div className="detection-question">
           <h1>
             Dalam sebulan terakhir...
-            <br /> Apakah anda pernah mengalami peristiwa traumatis?
+            <br /> {question}
           </h1>
           <p>
             (seperti kecelakaan, kejahatan seksual, orang yang dicintai

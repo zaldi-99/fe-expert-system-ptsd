@@ -8,15 +8,13 @@ const AnswerChoices = ({ question, weight, answer }) => {
         <i className="fas fa-check"></i>
         <div className="answer-icon">
           {weight === 0 ? (
-            <i class="fa-solid fa-thumbs-down"></i>
+            <i className="fa-solid fa-thumbs-down"></i>
           ) : weight === 1 ? (
-            <i class="fa-solid fa-thumbs-up"></i>
+            <i className="fa-solid fa-thumbs-up"></i>
           ) : (
-            <i class="fa-solid fa-thumbs-up"></i>
+            <i className="fa-solid fa-thumbs-up"></i>
           )}
-          <h3 className="">
-            {answer}
-          </h3>
+          <h3 className="">{answer}</h3>
         </div>
       </span>
     </label>

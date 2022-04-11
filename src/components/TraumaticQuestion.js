@@ -6,10 +6,7 @@ const TraumaticQuestion = ({ question, setState }) => {
     <div>
       <form>
         <div className="detection-question">
-          <h1>
-            Dalam sebulan terakhir...
-            <br /> {question}
-          </h1>
+          <h1>{question}</h1>
           <p>
             (seperti kecelakaan, kejahatan seksual, orang yang dicintai
             meninggal karena pembunuhan atau bunuh diri)

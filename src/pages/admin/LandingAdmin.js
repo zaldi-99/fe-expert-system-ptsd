@@ -12,7 +12,7 @@ const LandingAdmin = () => {
   const handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/api/insert", {
+      .post("http://localhost:3001/api/insert-symptom", {
         kode_gejala: kode_gejala,
         gejala: gejala,
         kategori: kategori,

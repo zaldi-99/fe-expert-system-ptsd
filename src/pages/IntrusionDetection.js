@@ -1,21 +1,20 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import IntrusionQuestion from "../components/IntrusionQuestion";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Question from "../components/Question";
 
 const IntrusionDetection = () => {
-  const [intrusionSymptom, setIntrusionSymptom] = useState([]);
-  const getAllSymptom = async () => {
-    const res = await axios("http://localhost:3001/api/symptom");
-    setIntrusionSymptom(res.data[1]);
-  };
-  useEffect(() => {
-    getAllSymptom();
-  }, []);
+  const navigate = useNavigate();
   return (
     <div className="detection-page">
       <div className="detection-box">
-        <IntrusionQuestion question={intrusionSymptom.gejala} />
-        <div className="next-btn">Selanjutnya</div>
+        <Question question="Apakah anda merasa terganggu dengan ingatan yang menyedihkan pada peristiwa traumatis?" />
+        <Question question="Mengalami mimpi buruk yang berulang terkait peristiwa traumatis?" />
+        <div
+          className="next-btn"
+          onClick={() => navigate("/avoidance-detection")}
+        >
+          Selanjutnya
+        </div>
       </div>
     </div>
   );

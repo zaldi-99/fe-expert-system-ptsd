@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import "./Modal.css";
 const Modal = ({ show, closeModal }) => {
   const navigate = useNavigate();
@@ -15,7 +16,13 @@ const Modal = ({ show, closeModal }) => {
         gender: gender,
       })
       .then(() => {
-        navigate("/traumatic-detection");
+        swal({
+          title: "Berhasil!",
+          text: "Silakan menjawab!",
+          icon: "success",
+        }).then(() => {
+          navigate("/traumatic-detection");
+        });
       });
   };
   if (!show) {

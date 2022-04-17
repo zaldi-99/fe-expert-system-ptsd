@@ -5,14 +5,14 @@ import "./Modal.css";
 const Modal = ({ show, closeModal }) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/api/user", {
-        nama_pengguna: name,
-        email_pengguna: email,
+        nama: name,
+        gender: gender,
       })
       .then(() => {
         navigate("/traumatic-detection");
@@ -25,7 +25,7 @@ const Modal = ({ show, closeModal }) => {
     <div className="modal">
       <div className="modal-content">
         <div className="modal-header">
-          <h4 className="modal-title">Masukan Nama dan Email</h4>
+          <h4 className="modal-title">Masukan Nama dan Gender</h4>
         </div>
         <div className="modal-body">
           <form
@@ -41,19 +41,29 @@ const Modal = ({ show, closeModal }) => {
               onChange={e => {
                 setName(e.target.value);
               }}
-              required
             />
             <br />
-            <label for="lname">Email:</label> <br />
+            <label for="lname">Gender:</label> <br />
             <input
-              type="email"
-              id="email_pengguna"
-              name="email"
+              type="radio"
+              id="male"
+              name="gender"
               onChange={e => {
-                setEmail(e.target.value);
+                setGender(e.target.value);
               }}
-              required
+              value="laki-laki"
             />
+            Laki-laki
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              onChange={e => {
+                setGender(e.target.value);
+              }}
+              value="perempuan"
+            />
+            Perempuan
             <br />
             <input type="submit" value="Kirim" />
           </form>

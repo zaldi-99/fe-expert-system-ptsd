@@ -1,7 +1,7 @@
 import React from "react";
 import AnswerChoices from "./AnswerChoices";
 
-const TraumaticQuestion = ({ question, setState }) => {
+const Question = ({ question, setState }) => {
   return (
     <div>
       <form>
@@ -21,4 +21,4 @@ const TraumaticQuestion = ({ question, setState }) => {
   );
 };
 
-export default TraumaticQuestion;
+export default Question;

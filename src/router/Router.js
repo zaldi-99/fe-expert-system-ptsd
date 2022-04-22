@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Routers, Route, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import About from "../pages/About";
 import LandingAdmin from "../pages/admin/LandingAdmin";
 import Detection from "../pages/Detection";
@@ -10,7 +9,6 @@ import IntrusionDetection from "../pages/IntrusionDetection";
 const Router = () => {
   return (
     <Routers>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="traumatic-detection" element={<Detection />} />

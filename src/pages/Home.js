@@ -1,29 +1,25 @@
-import React, { useState } from "react";
+import React, { Fragment } from "react";
 // import component
 
 // import style
 import "./Home.css";
-import Modal from "../components/Modal";
+import Hero from "../components/Hero";
+import Information from "../components/Information";
+import Navbar from "../components/Navbar";
+import Symptom from "../components/Symptom";
+import Feedback from "../components/Feedback";
+import Footer from "../components/Footer";
 
 const Home = () => {
-  const [isShowModal, setIsShowModal] = useState(false);
-
   return (
-    <>
-      <div className="homepage">
-        <div className="homepage-title">
-          <h1>Selamat Datang</h1>
-          <p className="homepage-subtitle">
-            Aplikasi ini bertujuan untuk melakukan deteksi dini dari gangguan
-            mental post-traumatic stress disorder
-          </p>
-        </div>
-        <div className="btn" onClick={() => setIsShowModal(true)}>
-          Mulai Test
-        </div>
-        <Modal show={isShowModal} closeModal={() => setIsShowModal(false)} />
-      </div>
-    </>
+    <Fragment>
+      <Navbar />
+      <Hero />
+      <Information />
+      <Symptom />
+      <Feedback />
+      <Footer />
+    </Fragment>
   );
 };
 

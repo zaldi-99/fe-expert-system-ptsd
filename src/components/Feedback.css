@@ -1,0 +1,12 @@
+.feedback-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback-text {
+  max-width: 50%;
+}
+
+.feedback-subtitle {
+  margin-bottom: 1rem;
+}

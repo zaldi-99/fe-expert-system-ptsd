@@ -1,0 +1,12 @@
+.information-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-text {
+  max-width: 50%;
+}
+
+.information-subtitle {
+  margin-bottom: 1rem;
+}

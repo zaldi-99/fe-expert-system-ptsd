@@ -20,7 +20,7 @@ const AdminNavbar = () => {
                 <p>Pengguna</p>
               </div>
             </Link>
-            <Link to="/admin-gallery" className="a-navbar__link">
+            <Link to="/article-list" className="a-navbar__link">
               <div className="a-navbar__item">
                 <p>Artikel</p>
               </div>

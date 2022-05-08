@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
 
-const AdminListSymptom = () => {
+const AdminArticleList = () => {
   const [symptom, setSymptom] = useState();
 
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const AdminListSymptom = () => {
   return (
     <Fragment>
       <div>
-        <h1 style={{ textAlign: "center", marginTop: 20 }}>Daftar Gejala</h1>
+        <h1 style={{ textAlign: "center", marginTop: 20 }}>Daftar Artikel</h1>
         <div
           className="add-symptom"
           style={{
@@ -72,7 +72,7 @@ const AdminListSymptom = () => {
         >
           <button onClick={() => navigate(-1)}>Kembali</button>
           <button onClick={() => navigate("/add-symptom")}>
-            Tambah Gejala
+            Tambah Artikel
           </button>
         </div>
         <section>
@@ -83,4 +83,4 @@ const AdminListSymptom = () => {
   );
 };
 
-export default AdminListSymptom;
+export default AdminArticleList;

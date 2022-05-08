@@ -10,6 +10,7 @@ import AdminSymptomList from "../pages/admin/AdminSymptomList";
 import AdminAddSymptom from "../pages/admin/AdminAddSymptom";
 import AdminUsersList from "../pages/admin/AdminUsersList";
 import AdminLogin from "../pages/admin/AdminLogin";
+import AdminArticleList from "../pages/admin/AdminArticleList";
 
 const Router = () => {
   return (
@@ -24,6 +25,7 @@ const Router = () => {
         <Route path="symptom-list" element={<AdminSymptomList />} />
         <Route path="add-symptom" element={<AdminAddSymptom />} />
         <Route path="user-list" element={<AdminUsersList />} />
+        <Route path="article-list" element={<AdminArticleList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Routers>

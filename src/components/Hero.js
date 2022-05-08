@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/Hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero-container">
       <div className="hero-text">
@@ -16,7 +18,9 @@ const Hero = () => {
             placeat autem nobis perspiciatis?
           </p>
         </div>
-        <div className="btn">Mulai Test</div>
+        <div className="btn" onClick={() => navigate("/traumatic-detection")}>
+          Mulai Test
+        </div>
       </div>
       <div className="hero-video">
         <div className="video-box"></div>

@@ -8,6 +8,16 @@ import "./Detection.css";
 const Detection = () => {
   const navigate = useNavigate();
   const [traumaticSymptom, setTraumaticSymptom] = useState([]);
+  const [question1, setQuestion1] = useState(0 | 1);
+
+  const calculate = () => {
+    if (question1 === 1) {
+      navigate("/intrusion-detection");
+    }
+    if (question1 === 0) {
+      navigate("/");
+    }
+  };
 
   const getAllSymptom = async () => {
     const res = await axios("http://localhost:3001/api/symptom");
@@ -19,12 +29,12 @@ const Detection = () => {
   return (
     <div className="detection-page">
       <div className="detection-box">
-        <TraumaticQuestion question={traumaticSymptom.gejala} />
-        <div
-          className="next-btn"
-          onClick={() => navigate("/intrusion-detection")}
-        >
-          Selanjutnya
+        <TraumaticQuestion
+          question={traumaticSymptom.gejala}
+          setState={setQuestion1}
+        />
+        <div className="next-btn" onClick={() => calculate()}>
+          Proses
         </div>
       </div>
     </div>

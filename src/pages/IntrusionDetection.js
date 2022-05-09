@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import IntrusionQuestion from "../components/IntrusionQuestion";
+import Question from "../components/Question";
 
 const IntrusionDetection = () => {
   const [intrusionSymptom, setIntrusionSymptom] = useState([]);
@@ -14,7 +14,7 @@ const IntrusionDetection = () => {
   return (
     <div className="detection-page">
       <div className="detection-box">
-        <IntrusionQuestion question={intrusionSymptom.gejala} />
+        <Question question={intrusionSymptom.gejala} />
         <div className="next-btn">Selanjutnya</div>
       </div>
     </div>

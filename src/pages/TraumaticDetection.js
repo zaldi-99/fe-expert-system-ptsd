@@ -5,16 +5,18 @@ import TraumaticQuestion from "../components/TraumaticQuestion";
 
 import "./Detection.css";
 
-const Detection = () => {
+const TraumaticDetection = () => {
   const navigate = useNavigate();
   const [traumaticSymptom, setTraumaticSymptom] = useState([]);
-  const [question1, setQuestion1] = useState(0 | 1);
+  const [traumaticAnswer, setTraumaticAnswer] = useState(0 | 1);
 
-  const calculate = () => {
-    if (question1 === 1) {
+  const handleProcess = () => {
+    // when experiencing trauma then navigate to another question
+    if (traumaticAnswer === 1) {
       navigate("/intrusion-detection");
     }
-    if (question1 === 0) {
+    // when no experiencing trauma then show result negatif ptsd
+    if (traumaticAnswer === 0) {
       navigate("/");
     }
   };
@@ -31,9 +33,9 @@ const Detection = () => {
       <div className="detection-box">
         <TraumaticQuestion
           question={traumaticSymptom.gejala}
-          setState={setQuestion1}
+          setState={setTraumaticAnswer}
         />
-        <div className="next-btn" onClick={() => calculate()}>
+        <div className="next-btn" onClick={() => handleProcess()}>
           Proses
         </div>
       </div>
@@ -41,4 +43,4 @@ const Detection = () => {
   );
 };
 
-export default Detection;
+export default TraumaticDetection;

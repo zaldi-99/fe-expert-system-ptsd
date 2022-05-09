@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Routers, Route, Routes } from "react-router-dom";
 import LandingAdmin from "../pages/admin/LandingAdmin";
-import Detection from "../pages/Detection";
 import Home from "../pages/Home";
 import IntrusionDetection from "../pages/IntrusionDetection";
 import Information from "../pages/Information";
@@ -11,6 +10,7 @@ import AdminAddSymptom from "../pages/admin/AdminAddSymptom";
 import AdminUsersList from "../pages/admin/AdminUsersList";
 import AdminLogin from "../pages/admin/AdminLogin";
 import AdminArticleList from "../pages/admin/AdminArticleList";
+import TraumaticDetection from "../pages/TraumaticDetection";
 
 const Router = () => {
   return (
@@ -18,7 +18,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="information" element={<Information />} />
-        <Route path="traumatic-detection" element={<Detection />} />
+        <Route path="traumatic-detection" element={<TraumaticDetection />} />
         <Route path="intrusion-detection" element={<IntrusionDetection />} />
         <Route path="login-admin" element={<AdminLogin />} />
         <Route path="admin" element={<LandingAdmin />} />

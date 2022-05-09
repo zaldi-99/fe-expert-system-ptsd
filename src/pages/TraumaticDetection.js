@@ -21,12 +21,21 @@ const TraumaticDetection = () => {
     }
   };
 
-  const getAllSymptom = async () => {
-    const res = await axios("http://localhost:3001/api/symptom");
-    setTraumaticSymptom(res.data[0]);
+  const getTraumaticSymptom = () => {
+    axios
+      .get("http://localhost:3001/api/symptom")
+      .then(function (res) {
+        setTraumaticSymptom(res.data[0]);
+        console.log(res);
+      })
+      .catch(function (err) {
+        alert(err);
+        console.log(err);
+      });
   };
+
   useEffect(() => {
-    getAllSymptom();
+    getTraumaticSymptom();
   }, []);
   return (
     <div className="detection-page">

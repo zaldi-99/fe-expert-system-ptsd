@@ -1,18 +1,18 @@
-import swal from "@sweetalert/with-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import Question from "../components/Question";
 
-const IntrusionDetection = () => {
+const AvoidanceDetection = () => {
   const navigate = useNavigate();
-  const [intrusionSymptom, setIntrusionSymptom] = useState([]);
+  const [avoidanceSymptom, setAvoidanceSymptom] = useState([]);
 
-  const getIntrusionSymptom = () => {
+  const getAvoidanceSymptom = () => {
     axios
       .get("http://localhost:3001/api/symptom")
       .then(function (res) {
-        setIntrusionSymptom(res.data);
+        setAvoidanceSymptom(res.data);
         console.log(res);
       })
       .catch(function (err) {
@@ -21,16 +21,15 @@ const IntrusionDetection = () => {
       });
   };
   useEffect(() => {
-    getIntrusionSymptom();
+    getAvoidanceSymptom();
   }, []);
   return (
     <div className="detection-page">
-      
       <div className="detection-box">
-        {intrusionSymptom
-          .filter(intrusion => intrusion.kategori === "Intrusi")
-          .map((intrusion, index) => (
-            <Question question={intrusion.gejala} key={index} />
+        {avoidanceSymptom
+          .filter(avoidance => avoidance.kategori === "Avoidance")
+          .map((avoidance, index) => (
+            <Question question={avoidance.gejala} key={index} />
           ))}
 
         <div
@@ -44,4 +43,4 @@ const IntrusionDetection = () => {
   );
 };
 
-export default IntrusionDetection;
+export default AvoidanceDetection;

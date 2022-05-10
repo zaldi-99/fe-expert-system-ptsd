@@ -8,7 +8,7 @@ const Information = () => {
     <Fragment>
       <Navbar />
       <section className="information-page">
-        <div className="information-title">
+        <div className="information-headline">
           <h1>Post Traumatic Stress Disorder</h1>
           <div className="information-desc">
             <p>

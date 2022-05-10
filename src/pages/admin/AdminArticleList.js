@@ -4,40 +4,52 @@ import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
 
 const AdminArticleList = () => {
-  const [symptom, setSymptom] = useState();
+  const [articleList, setArticleList] = useState();
 
   const navigate = useNavigate();
 
-  const getAllSymptom = () => {
-    axios.get("http://localhost:3001/api/symptom").then(res => {
+  const getAllArticle = () => {
+    axios.get("http://localhost:3001/api/article-list").then(res => {
       console.log(res.data);
-      setSymptom(res.data);
+      setArticleList(res.data);
     });
   };
   useEffect(() => {
-    getAllSymptom();
+    getAllArticle();
   }, []);
 
-  const deleteData = id_gejala => {
-    axios.delete(`http://localhost:3001/api/delete/symptom/${id_gejala}`);
-  };
+  // const deleteData = id_gejala => {
+  //   axios.delete(`http://localhost:3001/api/delete/symptom/${id_gejala}`);
+  // };
 
   const columns = [
     {
-      name: "kode_gejala",
-      selector: row => row.kode_gejala,
+      name: "ID Artikel",
+      selector: row => row.id_artikel,
     },
     {
-      name: "Gejala",
+      name: "Judul",
       cell: row => (
         <div>
-          <p>{row.gejala}</p>
+          <p>{row.judul}</p>
         </div>
       ),
     },
     {
-      name: "Kategori",
-      selector: row => row.kategori,
+      name: "Deskripsi",
+      cell: row => (
+        <div>
+          <p>{row.deskripsi}</p>
+        </div>
+      ),
+    },
+    {
+      name: "Sumber",
+      selector: row => row.sumber,
+    },
+    {
+      name: "URL",
+      selector: row => row.url,
     },
     {
       name: "Action",
@@ -45,9 +57,9 @@ const AdminArticleList = () => {
         <div style={{ display: "flex", gap: "1rem" }}>
           <button
             id={row.id_gejala}
-            onClick={() => {
-              deleteData(row.id_gejala);
-            }}
+            // onClick={() => {
+            //   deleteData(row.id_gejala);
+            // }}
           >
             <i className="fa-solid fa-trash-can"></i>
           </button>
@@ -76,7 +88,7 @@ const AdminArticleList = () => {
           </button>
         </div>
         <section>
-          <DataTable columns={columns} data={symptom} pagination />
+          <DataTable columns={columns} data={articleList} pagination />
         </section>
       </div>
     </Fragment>

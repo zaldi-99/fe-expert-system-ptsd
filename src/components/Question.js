@@ -1,11 +1,12 @@
 import React from "react";
 import AnswerChoices from "./AnswerChoices";
 
-const IntrusionQuestion = ({ question }) => {
+const Question = ({ question }) => {
   return (
     <div>
       <form>
         <div className="detection-question">
+          <p>Dalam satu bulan terakhir...</p>
           <h1>{question}</h1>
         </div>
         <div className="detection-answer">
@@ -17,4 +18,4 @@ const IntrusionQuestion = ({ question }) => {
   );
 };
 
-export default IntrusionQuestion;
+export default Question;

@@ -25,7 +25,6 @@ const IntrusionDetection = () => {
   }, []);
   return (
     <div className="detection-page">
-      
       <div className="detection-box">
         {intrusionSymptom
           .filter(intrusion => intrusion.kategori === "Intrusi")

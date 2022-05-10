@@ -1,9 +1,28 @@
-import React, { Fragment } from "react";
-import ArticleItem from "../components/ArticleItem";
+import axios from "axios";
+import React, { Fragment, useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import ArticleItem from "../components/ArticleItem";
 import "./Information.css";
 
 const Information = () => {
+  const [data, setData] = useState([]);
+
+  const getArticleData = () => {
+    axios
+      .get("http://localhost:3001/api/article-list")
+      .then(function (res) {
+        setData(res.data);
+        console.log(res.data);
+      })
+      .catch(function (err) {
+        alert(err);
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getArticleData();
+  }, []);
   return (
     <Fragment>
       <Navbar />
@@ -20,9 +39,15 @@ const Information = () => {
           </div>
         </div>
         <div className="article-list">
-          <ArticleItem />
-          <ArticleItem />
-          <ArticleItem />
+          {data.map((data, index) => (
+            <ArticleItem
+              key={index}
+              title={data.judul}
+              description={data.deskripsi}
+              source={data.sumber}
+              url={data.url}
+            />
+          ))}
         </div>
       </section>
     </Fragment>

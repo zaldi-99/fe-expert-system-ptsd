@@ -70,7 +70,7 @@ const AdminListSymptom = () => {
             padding: "0rem 4rem",
           }}
         >
-          <button onClick={() => navigate(-1)}>Kembali</button>
+          <button onClick={() => navigate("/admin")}>Beranda</button>
           <button onClick={() => navigate("/add-symptom")}>
             Tambah Gejala
           </button>

@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import Question from "../components/Question";
 
-const AvoidanceDetection = () => {
+const MoodDetection = () => {
   const navigate = useNavigate();
-  const [avoidanceSymptom, setAvoidanceSymptom] = useState([]);
+  const [moodSymptom, setMoodSymptom] = useState([]);
 
-  const getAvoidanceSymptom = () => {
+  const getSymptomData = () => {
     axios
       .get("http://localhost:3001/api/symptom")
       .then(function (res) {
-        setAvoidanceSymptom(res.data);
+        setMoodSymptom(res.data);
         console.log(res);
       })
       .catch(function (err) {
@@ -21,18 +21,21 @@ const AvoidanceDetection = () => {
       });
   };
   useEffect(() => {
-    getAvoidanceSymptom();
+    getSymptomData();
   }, []);
   return (
     <div className="detection-page">
       <div className="detection-box">
-        {avoidanceSymptom
-          .filter(avoidance => avoidance.kategori === "Avoidance")
-          .map((avoidance, index) => (
-            <Question question={avoidance.gejala} key={index} />
+        {moodSymptom
+          .filter(mood => mood.kategori === "Mood")
+          .map((mood, index) => (
+            <Question question={mood.gejala} key={index} />
           ))}
 
-        <div className="next-btn" onClick={() => navigate("/mood-detection")}>
+        <div
+          className="next-btn"
+          onClick={() => navigate("/arousal-detection")}
+        >
           Selanjutnya
         </div>
       </div>
@@ -40,4 +43,4 @@ const AvoidanceDetection = () => {
   );
 };
 
-export default AvoidanceDetection;
+export default MoodDetection;

@@ -17,6 +17,7 @@ const TraumaticDetection = () => {
     // when experiencing trauma then navigate to another question
     if (traumaticAnswer === 1) {
       navigate("/intrusion-detection");
+      localStorage.setItem("Question1", traumaticAnswer);
     }
     // when no experiencing trauma then show result negatif ptsd
     if (traumaticAnswer === 0) {

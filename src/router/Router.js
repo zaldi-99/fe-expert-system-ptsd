@@ -12,6 +12,8 @@ import AdminLogin from "../pages/admin/AdminLogin";
 import AdminArticleList from "../pages/admin/AdminArticleList";
 import TraumaticDetection from "../pages/TraumaticDetection";
 import AvoidanceDetection from "../pages/AvoidanceDetection";
+import MoodDetection from "../pages/MoodDetection";
+import ArousalDetection from "../pages/ArousalDetection";
 
 const Router = () => {
   return (
@@ -22,6 +24,8 @@ const Router = () => {
         <Route path="traumatic-detection" element={<TraumaticDetection />} />
         <Route path="intrusion-detection" element={<IntrusionDetection />} />
         <Route path="avoidance-detection" element={<AvoidanceDetection />} />
+        <Route path="mood-detection" element={<MoodDetection />} />
+        <Route path="arousal-detection" element={<ArousalDetection />} />
         <Route path="login-admin" element={<AdminLogin />} />
         <Route path="admin" element={<LandingAdmin />} />
         <Route path="symptom-list" element={<AdminSymptomList />} />

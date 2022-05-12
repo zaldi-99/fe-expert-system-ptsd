@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 const AdminListSymptom = () => {
   const [symptom, setSymptom] = useState();
@@ -45,9 +46,29 @@ const AdminListSymptom = () => {
         <div style={{ display: "flex", gap: "1rem" }}>
           <button
             id={row.id_gejala}
-            onClick={() => {
-              deleteData(row.id_gejala);
-            }}
+            onClick={() =>
+              swal({
+                title: "Hapus Data",
+                text: "Apakah anda yakin?",
+                icon: "warning",
+                dangerMode: true,
+                buttons: ["Batal", "Ok"],
+              }).then(willDelete => {
+                if (willDelete) {
+                  deleteData(row.id_gejala);
+                  swal(
+                    "Berhasil Hapus Data!",
+                    "Sistem akan memuat ulang halaman",
+                    {
+                      icon: "success",
+                    }
+                  );
+                  window.location.reload(true);
+                } else {
+                  swal("Data batal dihapus!");
+                }
+              })
+            }
           >
             <i className="fa-solid fa-trash-can"></i>
           </button>

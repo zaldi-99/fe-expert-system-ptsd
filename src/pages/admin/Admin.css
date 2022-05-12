@@ -45,3 +45,50 @@
   font-size: 16px;
   color: white;
 }
+
+/* Manage Page */
+
+/* Add */
+
+.input-uppercase {
+  text-transform: uppercase;
+}
+
+.add-symptom-page {
+}
+
+.add-symptom-content {
+}
+
+.add-symptom-header {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.add-symptom-form {
+  background-color: #f2f2f2;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  margin-top: 0.8rem;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #45a049;
+}

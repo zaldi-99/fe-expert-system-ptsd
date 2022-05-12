@@ -28,12 +28,12 @@ const TraumaticDetection = () => {
   const getTraumaticSymptom = () => {
     axios
       .get("http://localhost:3001/api/symptom")
-      .then(function (res) {
+      .then(res => {
         setTraumaticSymptom(res.data[0]);
         console.log(res);
         setIsLoading(false);
       })
-      .catch(function (err) {
+      .catch(err => {
         alert(err);
         console.log(err);
         setIsLoading(false);

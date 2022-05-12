@@ -25,7 +25,7 @@ const AdminListSymptom = () => {
 
   const columns = [
     {
-      name: "kode_gejala",
+      name: "Kode Gejala",
       selector: row => row.kode_gejala,
     },
     {

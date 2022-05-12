@@ -36,9 +36,13 @@ section {
   padding: 4rem 6rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .btn,
 .next-btn {
-  background-color: #8d8daa; /* Green */
+  background-color: #8d8daa;
   border: none;
   color: white;
   padding: 10px 12px;

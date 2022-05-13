@@ -2,7 +2,7 @@ import swal from "@sweetalert/with-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Question from "../components/Question";
+import AnswerChoices from "../components/AnswerChoices";
 
 const IntrusionDetection = () => {
   const navigate = useNavigate();
@@ -23,15 +23,30 @@ const IntrusionDetection = () => {
   useEffect(() => {
     getIntrusionSymptom();
   }, []);
+
   return (
     <div className="detection-page">
       <div className="detection-box">
         {intrusionSymptom
           .filter(intrusion => intrusion.kategori === "Intrusi")
-          .map((intrusion, index) => (
-            <Question question={intrusion.gejala} key={index} />
+          .map(intrusion => (
+            <div key={intrusion.id_gejala}>
+              <form>
+                <div className="detection-question">
+                  <p>Dalam satu bulan terakhir...</p>
+                  <h1>{intrusion.gejala}</h1>
+                </div>
+                <div className="detection-answer">
+                  <AnswerChoices
+                    weight={1}
+                    answer="Ya"
+                    fn={() => console.log("klik")}
+                  />
+                  <AnswerChoices weight={0} answer="Tidak" />
+                </div>
+              </form>
+            </div>
           ))}
-
         <div
           className="next-btn"
           onClick={() => navigate("/avoidance-detection")}

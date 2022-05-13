@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import Question from "../components/Question";
+import AnswerChoices from "../components/AnswerChoices";
 
 const AvoidanceDetection = () => {
   const navigate = useNavigate();
@@ -29,7 +29,22 @@ const AvoidanceDetection = () => {
         {avoidanceSymptom
           .filter(avoidance => avoidance.kategori === "Avoidance")
           .map((avoidance, index) => (
-            <Question question={avoidance.gejala} key={index} />
+            <div key={avoidance.id_gejala}>
+              <form>
+                <div className="detection-question">
+                  <p>Dalam satu bulan terakhir...</p>
+                  <h1>{avoidance.gejala}</h1>
+                </div>
+                <div className="detection-answer">
+                  <AnswerChoices
+                    weight={1}
+                    answer="Ya"
+                    fn={() => console.log("klik")}
+                  />
+                  <AnswerChoices weight={0} answer="Tidak" />
+                </div>
+              </form>
+            </div>
           ))}
 
         <div className="next-btn" onClick={() => navigate("/mood-detection")}>

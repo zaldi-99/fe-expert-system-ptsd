@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import Question from "../components/Question";
+import AnswerChoices from "../components/AnswerChoices";
 
 const MoodDetection = () => {
   const navigate = useNavigate();
@@ -29,7 +29,22 @@ const MoodDetection = () => {
         {moodSymptom
           .filter(mood => mood.kategori === "Mood")
           .map((mood, index) => (
-            <Question question={mood.gejala} key={index} />
+            <div key={mood.id_gejala}>
+              <form>
+                <div className="detection-question">
+                  <p>Dalam satu bulan terakhir...</p>
+                  <h1>{mood.gejala}</h1>
+                </div>
+                <div className="detection-answer">
+                  <AnswerChoices
+                    weight={1}
+                    answer="Ya"
+                    fn={() => console.log("klik")}
+                  />
+                  <AnswerChoices weight={0} answer="Tidak" />
+                </div>
+              </form>
+            </div>
           ))}
 
         <div

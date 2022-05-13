@@ -7,13 +7,20 @@ import { createContext, useState } from "react";
 //         "answer": "1",
 //     }
 // ]
-export const AnswerContext = createContext([]);
+export const AnswerContext = createContext({
+  answers: [],
+  addAnswer: (id, question, answer) => {},
+});
 
 export const AnswerProvider = ({ children }) => {
   const [answers, setAnswers] = useState([]);
 
+  const addAnswer = (id, question, answer) => {
+    setAnswers(current => [...current, { id, question, answer }]);
+  };
+
   return (
-    <AnswerContext.Provider value={{ answers, setAnswers }}>
+    <AnswerContext.Provider value={{ answers, addAnswer }}>
       {children}
     </AnswerContext.Provider>
   );

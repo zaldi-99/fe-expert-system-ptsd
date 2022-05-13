@@ -1,12 +1,14 @@
 import swal from "@sweetalert/with-react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AnswerChoices from "../components/AnswerChoices";
+import { AnswerContext } from "../components/Context";
 
 const IntrusionDetection = () => {
   const navigate = useNavigate();
   const [intrusionSymptom, setIntrusionSymptom] = useState([]);
+  const answers = useContext(AnswerContext);
 
   const getIntrusionSymptom = () => {
     axios
@@ -20,6 +22,7 @@ const IntrusionDetection = () => {
         console.log(err);
       });
   };
+
   useEffect(() => {
     getIntrusionSymptom();
   }, []);
@@ -40,16 +43,35 @@ const IntrusionDetection = () => {
                   <AnswerChoices
                     weight={1}
                     answer="Ya"
-                    fn={() => console.log("klik")}
+                    fn={() =>
+                      answers.addAnswer(
+                        intrusion.id_gejala,
+                        intrusion.gejala,
+                        1
+                      )
+                    }
                   />
-                  <AnswerChoices weight={0} answer="Tidak" />
+                  <AnswerChoices
+                    weight={0}
+                    answer="Tidak"
+                    fn={() =>
+                      answers.addAnswer(
+                        intrusion.id_gejala,
+                        intrusion.gejala,
+                        0
+                      )
+                    }
+                  />
                 </div>
               </form>
             </div>
           ))}
         <div
           className="next-btn"
-          onClick={() => navigate("/avoidance-detection")}
+          onClick={() => {
+            console.log(answers.answers);
+            navigate("/avoidance-detection");
+          }}
         >
           Selanjutnya
         </div>

@@ -49,7 +49,7 @@ const TraumaticDetection = () => {
       {traumaticSymptom ? (
         <div className="detection-box">
           <div>
-            <form>
+            <form onChange={e => console.log(e.target.checked)}>
               <div className="detection-question">
                 <h1>{traumaticSymptom.gejala}</h1>
                 <p>
@@ -61,11 +61,13 @@ const TraumaticDetection = () => {
                 <AnswerChoices
                   weight={1}
                   answer="Ya"
+                  question={traumaticSymptom.gejala}
                   fn={() => setTraumaticAnswer(1)}
                 />
                 <AnswerChoices
                   weight={0}
                   answer="Tidak"
+                  question={traumaticSymptom.gejala}
                   fn={() => setTraumaticAnswer(0)}
                 />
               </div>

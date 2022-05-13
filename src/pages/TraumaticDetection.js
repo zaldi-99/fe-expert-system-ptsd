@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
-import TraumaticQuestion from "../components/TraumaticQuestion";
+import AnswerChoices from "../components/AnswerChoices";
 
 import "./Detection.css";
 
@@ -17,8 +17,8 @@ const TraumaticDetection = () => {
     // when experiencing trauma then navigate to another question
     if (traumaticAnswer === 1) {
       navigate("/intrusion-detection");
-      localStorage.setItem("Question1", traumaticAnswer);
     }
+
     // when no experiencing trauma then show result negatif ptsd
     if (traumaticAnswer === 0) {
       navigate("/");
@@ -43,14 +43,34 @@ const TraumaticDetection = () => {
   useEffect(() => {
     getTraumaticSymptom();
   }, []);
+
   return (
     <div className="detection-page">
       {traumaticSymptom ? (
         <div className="detection-box">
-          <TraumaticQuestion
-            question={traumaticSymptom.gejala}
-            setState={setTraumaticAnswer}
-          />
+          <div>
+            <form>
+              <div className="detection-question">
+                <h1>{traumaticSymptom.gejala}</h1>
+                <p>
+                  (seperti kecelakaan, kejahatan seksual, orang yang dicintai
+                  meninggal karena pembunuhan atau bunuh diri)
+                </p>
+              </div>
+              <div className="detection-answer">
+                <AnswerChoices
+                  weight={1}
+                  answer="Ya"
+                  fn={() => setTraumaticAnswer(1)}
+                />
+                <AnswerChoices
+                  weight={0}
+                  answer="Tidak"
+                  fn={() => setTraumaticAnswer(0)}
+                />
+              </div>
+            </form>
+          </div>
           <div className="next-btn" onClick={() => handleProcess()}>
             Proses
           </div>

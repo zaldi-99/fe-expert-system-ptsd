@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import AnswerChoices from "../components/AnswerChoices";
+import { AnswerContext } from "../components/Context";
 
 const AvoidanceDetection = () => {
   const navigate = useNavigate();
   const [avoidanceSymptom, setAvoidanceSymptom] = useState([]);
+  const answers = useContext(AnswerContext);
 
   const getAvoidanceSymptom = () => {
     axios
@@ -23,6 +25,7 @@ const AvoidanceDetection = () => {
   useEffect(() => {
     getAvoidanceSymptom();
   }, []);
+
   return (
     <div className="detection-page">
       <div className="detection-box">
@@ -37,17 +40,41 @@ const AvoidanceDetection = () => {
                 </div>
                 <div className="detection-answer">
                   <AnswerChoices
+                    question={avoidance.gejala}
                     weight={1}
                     answer="Ya"
-                    fn={() => console.log("klik")}
+                    fn={() =>
+                      answers.addAnswer(
+                        avoidance.id_gejala,
+                        avoidance.gejala,
+                        1
+                      )
+                    }
                   />
-                  <AnswerChoices weight={0} answer="Tidak" />
+                  <AnswerChoices
+                    question={avoidance.gejala}
+                    weight={0}
+                    answer="Tidak"
+                    fn={() =>
+                      answers.addAnswer(
+                        avoidance.id_gejala,
+                        avoidance.gejala,
+                        0
+                      )
+                    }
+                  />
                 </div>
               </form>
             </div>
           ))}
 
-        <div className="next-btn" onClick={() => navigate("/mood-detection")}>
+        <div
+          className="next-btn"
+          onClick={() => {
+            navigate("/mood-detection");
+            console.log(answers.answers);
+          }}
+        >
           Selanjutnya
         </div>
       </div>

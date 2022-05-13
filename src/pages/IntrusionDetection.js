@@ -41,6 +41,7 @@ const IntrusionDetection = () => {
                 </div>
                 <div className="detection-answer">
                   <AnswerChoices
+                    question={intrusion.gejala}
                     weight={1}
                     answer="Ya"
                     fn={() =>
@@ -52,6 +53,7 @@ const IntrusionDetection = () => {
                     }
                   />
                   <AnswerChoices
+                    question={intrusion.gejala}
                     weight={0}
                     answer="Tidak"
                     fn={() =>

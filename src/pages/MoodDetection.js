@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import AnswerChoices from "../components/AnswerChoices";
+import { AnswerContext } from "../components/Context";
 
 const MoodDetection = () => {
   const navigate = useNavigate();
   const [moodSymptom, setMoodSymptom] = useState([]);
+  const answers = useContext(AnswerContext);
 
   const getSymptomData = () => {
     axios
@@ -37,11 +39,17 @@ const MoodDetection = () => {
                 </div>
                 <div className="detection-answer">
                   <AnswerChoices
+                    question={mood.gejala}
                     weight={1}
                     answer="Ya"
-                    fn={() => console.log("klik")}
+                    fn={() => answers.addAnswer(mood.id_gejala, mood.gejala, 1)}
                   />
-                  <AnswerChoices weight={0} answer="Tidak" />
+                  <AnswerChoices
+                    question={mood.gejala}
+                    weight={0}
+                    answer="Tidak"
+                    fn={() => answers.addAnswer(mood.id_gejala, mood.gejala, 0)}
+                  />
                 </div>
               </form>
             </div>
@@ -49,7 +57,10 @@ const MoodDetection = () => {
 
         <div
           className="next-btn"
-          onClick={() => navigate("/arousal-detection")}
+          onClick={() => {
+            navigate("/arousal-detection");
+            console.log(answers.answers);
+          }}
         >
           Selanjutnya
         </div>

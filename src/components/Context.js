@@ -16,6 +16,16 @@ export const AnswerProvider = ({ children }) => {
   const [answers, setAnswers] = useState([]);
 
   const addAnswer = (id, question, answer) => {
+    const copy = answers.slice();
+
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i].id === id) {
+        copy[i] = { id, question, answer };
+        setAnswers(copy);
+        return;
+      }
+    }
+
     setAnswers(current => [...current, { id, question, answer }]);
   };
 

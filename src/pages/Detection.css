@@ -1,4 +1,18 @@
-.detection-page {
+.criteria-header {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detection-answer {
+  display: flex;
+}
+
+.btn-process {
+}
+
+/* .detection-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,4 +44,4 @@
 
 .next-btn {
   margin-top: 1rem;
-}
+} */

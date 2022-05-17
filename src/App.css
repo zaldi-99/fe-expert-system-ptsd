@@ -132,3 +132,26 @@ a {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .radio-btn {
+    width: 100px;
+    height: 40px;
+    padding: 0.5rem;
+  }
+  .btn {
+    padding: 5px 8px;
+  }
+  .detection-page {
+    padding: 4rem;
+  }
+  .detection-question h1 {
+    font-size: 1rem;
+  }
+  .detection-question p {
+    font-size: 0.6rem;
+  }
+}

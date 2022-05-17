@@ -26,6 +26,16 @@ const Result = () => {
     // Experiencing one or more avoidance symptom
     if (result[3].answer === 1 || result[4].answer === 1) {
       return positif;
+    }
+    // Experiencing two or more changing mood
+    if (
+      (result[5].answer === 1 && result[6].answer === 1) ||
+      (result[7].answer === 1 && result[8].answer === 1) ||
+      (result[5].answer === 1 && result[7].answer === 1) ||
+      (result[5].answer === 1 && result[8].answer === 1) ||
+      (result[6].answer === 1 && result[7].answer === 1)
+    ) {
+      return positif;
     } else {
       return <p>Hasil ...</p>;
     }
@@ -33,7 +43,8 @@ const Result = () => {
 
   return (
     <div>
-      <p>Result</p>
+      <p>Hasil</p>
+      {<p>Halo, {localStorage.getItem("user")}</p>}
       <div className="answer-conclusion">
         <p>Jawaban yang anda berikan sebagai berikut :</p>
         {result

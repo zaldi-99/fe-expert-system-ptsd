@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./styles/Hero.css";
 
-const Hero = () => {
-  const navigate = useNavigate();
+const Hero = ({ fn }) => {
   return (
     <section className="hero-container">
       <div className="hero-text">
@@ -18,7 +16,7 @@ const Hero = () => {
             placeat autem nobis perspiciatis?
           </p>
         </div>
-        <div className="btn" onClick={() => navigate("/traumatic-detection")}>
+        <div className="btn" onClick={fn}>
           Mulai Test
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 // import component
 
 // import style
@@ -9,16 +9,19 @@ import Navbar from "../components/Navbar";
 import Symptom from "../components/Symptom";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
 const Home = () => {
+  const [isShow, setIsShow] = useState(false);
   return (
     <Fragment>
       <Navbar />
-      <Hero />
+      <Hero fn={() => setIsShow(true)} />
       <Information />
       <Symptom />
       <Feedback />
       <Footer />
+      <Modal show={isShow} />
     </Fragment>
   );
 };

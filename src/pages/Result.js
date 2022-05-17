@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Result.css";
 
 const Result = () => {
   const [result, setResult] = useState([]);
@@ -13,8 +14,15 @@ const Result = () => {
   }, []);
 
   const forwardChaining = () => {
-    const positif = "Hasil Positif";
-    const negatif = "Hasil Negatif";
+    const positif = "Positif";
+    const negatif = "Negatif";
+
+    for (let i = 0; i < result.length; i++) {
+      if (result[i].answer === 0) {
+        return negatif;
+      }
+    }
+
     // If user not experiencing trauma
     if (trauma.answer === 0) {
       return negatif;
@@ -42,29 +50,73 @@ const Result = () => {
   };
 
   return (
-    <div>
-      <p>Hasil</p>
-      {<p>Halo, {localStorage.getItem("user")}</p>}
-      <div className="answer-conclusion">
-        <p>Jawaban yang anda berikan sebagai berikut :</p>
-        {result
-          .filter(ans => ans.answer === 1)
-          .map(ans => (
-            <div>
-              <ul>
-                <li> {ans.question} </li>
-              </ul>
-            </div>
-          ))}
-
-        {result.length !== 0 && forwardChaining()}
+    <section className="result-page">
+      <div className="criteria-header">
+        <h1>Hasil</h1>
       </div>
-
-      {/* {result.map(ans => (
-        <p key={ans.question}>
-          {ans.answer} {ans.question}
-        </p>
-      ))} */}
+      <div className="greetings">
+        {
+          <h1>
+            Halo, {localStorage.getItem("user")} <br />{" "}
+            <span>
+              Terima kasih telah menggunakan sistem pakar diagnosa PTSD.
+            </span>{" "}
+          </h1>
+        }
+      </div>
+      <div className="result-conclusion">
+        <div className="user-answer">
+          <p>Sebagai informasi, jawaban yang anda berikan sebagai berikut :</p>
+          {result
+            .filter(ans => ans.answer === 1)
+            .map(ans => (
+              <div>
+                <ul>
+                  <li> {ans.question} </li>
+                </ul>
+              </div>
+            ))}
+        </div>
+        <div className="diagnose-result">
+          {result.length !== 0 && (
+            <h3>
+              Berdasarkan jawaban yang anda berikan, sistem memberikan hasil :{" "}
+              <span>{forwardChaining()}</span>
+            </h3>
+          )}
+        </div>
+        <div className="diagnose-source">
+          <p>
+            Hasil yang diberikan berdasarkan pada buku DSM-V. Disebutkan dalam
+            buku tersebut kriteria penderita dari PTSD yaitu
+          </p>
+          <p>
+            Mengalami peristiwa traumatis yang diikuti dengan gejala berikut :
+          </p>
+          <ol>
+            <li>Mengalami satu atau lebih gejala intrusi</li>
+            <li>Mengalami satu atau lebih gejala penghindaran</li>
+            <li>
+              Mengalami dua atau lebih gejala perubahan kognisi mood dan emosi
+            </li>
+            <li>Mengalami dua atau lebih gejala perubahan gairah</li>
+          </ol>
+        </div>
+        <div className="diagnose-information">
+          <p>
+            Informasi lebih lanjut dapat dilihat pada halaman{" "}
+            <a
+              href="/information"
+              onClick={() => {
+                localStorage.clear();
+                window.location.reload();
+              }}
+            >
+              Informasi
+            </a>
+          </p>
+        </div>
+      </div>
 
       <button
         onClick={() => {
@@ -73,9 +125,9 @@ const Result = () => {
           window.location.reload();
         }}
       >
-        Selesai
+        Beranda
       </button>
-    </div>
+    </section>
   );
 };
 

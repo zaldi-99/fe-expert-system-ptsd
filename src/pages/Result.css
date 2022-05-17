@@ -1,0 +1,14 @@
+.result-conclusion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.greetings {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.diagnose-result span {
+  font-weight: 500;
+}

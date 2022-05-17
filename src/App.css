@@ -32,6 +32,14 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
 section {
   padding: 4rem 6rem;
 }
@@ -42,7 +50,15 @@ button {
 
 a {
   text-decoration: none;
-  color: black;
+  color: blue;
+}
+
+.page {
+  display: flex;
+  max-width: 1440px;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
 }
 
 .btn,

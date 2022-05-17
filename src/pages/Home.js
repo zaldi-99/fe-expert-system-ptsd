@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 // import component
 
 // import style
@@ -14,7 +14,7 @@ import Modal from "../components/Modal";
 const Home = () => {
   const [isShow, setIsShow] = useState(false);
   return (
-    <Fragment>
+    <div className="page">
       <Navbar />
       <Hero fn={() => setIsShow(true)} />
       <Information />
@@ -22,7 +22,7 @@ const Home = () => {
       <Feedback />
       <Footer />
       <Modal show={isShow} />
-    </Fragment>
+    </div>
   );
 };
 

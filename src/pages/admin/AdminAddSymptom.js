@@ -25,54 +25,64 @@ const AdminAddSymptom = () => {
 
   return (
     <div className="add-symptom-page">
-      <div className="add-symptom-title">
+      <div className="add-symptom-header">
         <h1>Tambah Gejala</h1>
+        <p>Silakan masukkan data gejala sesuai dengan panduan dari pakar</p>
       </div>
-      <div className="back-button">
-        <button onClick={() => navigate(-1)}>Kembali</button>
-      </div>
-      <div className="add-symptom-form">
-        <form
-          onSubmit={e => {
-            handleSubmit(e);
-          }}
-        >
-          <label for="name">Kode Gejala:</label> <br />
-          <input
-            type="text"
-            id="kode_gejala"
-            name="kode_gejala"
-            onChange={e => {
-              setKodeGejala(e.target.value);
+      <section className="add-symptom-content">
+        <div className="back-button">
+          <button onClick={() => navigate(-1)}>Kembali</button>
+        </div>
+        <div className="add-symptom-form">
+          <form
+            onSubmit={e => {
+              handleSubmit(e);
             }}
-            required
-          />
-          <br />
-          <label for="lname">Gejala:</label> <br />
-          <input
-            type="text"
-            id="gejala"
-            name="gejala"
-            onChange={e => {
-              setGejala(e.target.value);
-            }}
-            required
-          />
-          <br />
-          <label for="lname">Kategori:</label> <br />
-          <input
-            type="text"
-            id="kategori"
-            name="kategori"
-            onChange={e => {
-              setKategori(e.target.value);
-            }}
-            required
-          />
-          <br />
-          <input type="submit" value="Kirim" />
-        </form>
-      </div>
+          >
+            <label for="name">Kode Gejala:</label> <br />
+            <input
+              className="input-uppercase"
+              type="text"
+              id="kode_gejala"
+              name="kode_gejala"
+              onChange={e => {
+                setKodeGejala(e.target.value);
+              }}
+              required
+            />
+            <br />
+            <label for="lname">Gejala:</label> <br />
+            <input
+              type="text"
+              id="gejala"
+              name="gejala"
+              onChange={e => {
+                setGejala(e.target.value);
+              }}
+              required
+            />
+            <br />
+            <label for="lname">Kategori:</label> <br />
+            <select
+              name="kategori"
+              id="kategori"
+              onChange={e => {
+                setKategori(e.target.value);
+              }}
+            >
+              <option value="default" hidden>
+                Pilih Kategori
+              </option>
+              <option value="Intrusi">Intrusion</option>
+              <option value="Avoidance">Avoidance</option>
+              <option value="Mood">Mood or Emotion</option>
+              <option value="Arousal">Arousal</option>
+            </select>
+            <br />
+            <input type="submit" value="Kirim" className="submit-btn" />
+          </form>
+        </div>
+      </section>
     </div>
   );
 };

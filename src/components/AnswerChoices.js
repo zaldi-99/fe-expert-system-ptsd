@@ -1,9 +1,9 @@
 import React from "react";
 
-const AnswerChoices = ({ question, weight, answer, setState }) => {
+const AnswerChoices = ({ fn, question, weight, answer }) => {
   return (
-    <label className="custom-radio" onClick={() => setState(weight)}>
-      <input type="radio" name={question} />
+    <label className="custom-radio">
+      <input type="radio" name={question} onClick={fn} />
       <span className="radio-btn">
         <i className="fas fa-check"></i>
         <div className="answer-icon">

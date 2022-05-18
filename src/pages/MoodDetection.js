@@ -1,45 +1,96 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import Question from "../components/Question";
+import AnswerChoices from "../components/AnswerChoices";
+import { AnswerContext } from "../components/Context";
+import Loading from "../components/Loading";
 
 const MoodDetection = () => {
   const navigate = useNavigate();
+
   const [moodSymptom, setMoodSymptom] = useState([]);
+  const [answer, setAnswer] = useState(null);
+  const [isFetch, setIsFetch] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const answers = useContext(AnswerContext);
 
   const getSymptomData = () => {
     axios
       .get("http://localhost:3001/api/symptom")
       .then(function (res) {
         setMoodSymptom(res.data);
+        setIsFetch(true);
+        setIsLoading(false);
         console.log(res);
       })
       .catch(function (err) {
         swal("Oops terjadi kesalahan", "Silakan coba muat ulang", "error");
+        setIsFetch(false);
+        setIsLoading(false);
         console.log(err);
       });
   };
+
+  const handleSubmit = () => {
+    if (answer === null) {
+      alert("jawaban tidak boleh kosong");
+    } else {
+      console.log(answers.answers);
+      navigate("/arousal-detection");
+    }
+  };
+
   useEffect(() => {
     getSymptomData();
   }, []);
   return (
-    <div className="detection-page">
-      <div className="detection-box">
-        {moodSymptom
-          .filter(mood => mood.kategori === "Mood")
-          .map((mood, index) => (
-            <Question question={mood.gejala} key={index} />
-          ))}
-
-        <div
-          className="next-btn"
-          onClick={() => navigate("/arousal-detection")}
-        >
-          Selanjutnya
-        </div>
+    <section className="detection-page">
+      <div className="criteria-header">
+        <h1>Kriteria 3 : Diagnosa Perubahan Mood</h1>
       </div>
-    </div>
+      {isFetch ? (
+        <div>
+          {moodSymptom
+            .filter(data => data.kategori === "Mood")
+            .map(mood => (
+              <div key={mood.id_gejala}>
+                <form>
+                  <div className="detection-question">
+                    <p>Dalam satu bulan terakhir, apakah anda...</p>
+                    <h1>{mood.gejala}</h1>
+                  </div>
+                  <div className="detection-answer">
+                    <AnswerChoices
+                      question={mood.gejala}
+                      weight={1}
+                      answer="Ya"
+                      fn={() => {
+                        setAnswer(1);
+                        answers.addAnswer(mood.id_gejala, mood.gejala, 1);
+                      }}
+                    />
+                    <AnswerChoices
+                      question={mood.gejala}
+                      weight={0}
+                      answer="Tidak"
+                      fn={() => {
+                        setAnswer(0);
+                        answers.addAnswer(mood.id_gejala, mood.gejala, 0);
+                      }}
+                    />
+                  </div>
+                </form>
+              </div>
+            ))}
+          <div className="btn btn-process" onClick={handleSubmit}>
+            Proses
+          </div>
+        </div>
+      ) : null}
+      <Loading isShow={isLoading} />
+    </section>
   );
 };
 

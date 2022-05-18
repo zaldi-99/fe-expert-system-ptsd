@@ -83,7 +83,7 @@ const AdminArticleList = () => {
           }}
         >
           <button onClick={() => navigate(-1)}>Kembali</button>
-          <button onClick={() => navigate("/add-symptom")}>
+          <button onClick={() => navigate("/add-article")}>
             Tambah Artikel
           </button>
         </div>

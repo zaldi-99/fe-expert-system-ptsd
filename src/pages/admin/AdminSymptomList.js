@@ -72,7 +72,10 @@ const AdminListSymptom = () => {
           >
             <i className="fa-solid fa-trash-can"></i>
           </button>
-          <button id={row.id_gejala}>
+          <button
+            id={row.id_gejala}
+            onClick={() => navigate(`/edit-symptom/${row.id_gejala}`)}
+          >
             <i className="fa-solid fa-pen-to-square"></i>
           </button>
         </div>

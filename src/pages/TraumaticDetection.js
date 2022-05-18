@@ -25,6 +25,7 @@ const TraumaticDetection = () => {
     if (traumaticAnswer === 1) {
       navigate("/intrusion-detection");
     }
+
     // when no experiencing trauma then show result negatif ptsd
     if (traumaticAnswer === 0) {
       navigate("/result");

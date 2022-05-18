@@ -7,6 +7,8 @@ import "./Information.css";
 const Information = () => {
   const [data, setData] = useState([]);
 
+  
+
   const getArticleData = () => {
     axios
       .get("http://localhost:3001/api/article-list")

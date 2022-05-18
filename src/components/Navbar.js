@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link to="/" className="nav-link">
             Beranda{" "}
           </Link>
-          <Link to="/information" className="nav-link">
+          <Link to="/article" className="nav-link">
             Informasi{" "}
           </Link>
           <Link to="" className="nav-link">

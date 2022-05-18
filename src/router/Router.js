@@ -16,6 +16,7 @@ import MoodDetection from "../pages/MoodDetection";
 import ArousalDetection from "../pages/ArousalDetection";
 import AdminAddArticle from "../pages/admin/AdminAddArticle";
 import Result from "../pages/Result";
+import AdminEditSymptom from "../pages/admin/AdminEditSymptom";
 
 const Router = () => {
   return (
@@ -33,6 +34,7 @@ const Router = () => {
         <Route path="admin" element={<LandingAdmin />} />
         <Route path="symptom-list" element={<AdminSymptomList />} />
         <Route path="add-symptom" element={<AdminAddSymptom />} />
+        <Route path="edit-symptom/:id" element={<AdminEditSymptom />} />
         <Route path="user-list" element={<AdminUsersList />} />
         <Route path="article-list" element={<AdminArticleList />} />
         <Route path="add-article" element={<AdminAddArticle />} />

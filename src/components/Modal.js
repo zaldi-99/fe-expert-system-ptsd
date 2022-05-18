@@ -24,6 +24,10 @@ const Modal = ({ show, closeModal }) => {
         }).then(() => {
           navigate("/traumatic-detection");
         });
+      })
+      .catch(err => {
+        swal("Oops terjadi kesalahan", `${err}`, "error");
+        console.log(err);
       });
   };
 

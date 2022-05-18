@@ -48,38 +48,9 @@ const ArousalDetection = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <div className="detection-page">
-      <div className="detection-box">
-        {arousalSymptom
-          .filter(arousal => arousal.kategori === "Arousal")
-          .map((arousal, index) => (
-            <div key={arousal.id_gejala}>
-              <form>
-                <div className="detection-question">
-                  <p>Dalam satu bulan terakhir...</p>
-                  <h1>{arousal.gejala}</h1>
-                </div>
-                <div className="detection-answer">
-                  <AnswerChoices
-                    weight={1}
-                    answer="Ya"
-                    fn={() => console.log("klik")}
-                  />
-                  <AnswerChoices weight={0} answer="Tidak" />
-                </div>
-              </form>
-            </div>
-          ))}
-
-        <div className="next-btn" onClick={() => handleProcess()}>
-          Lihat Hasil
-        </div>
-=======
     <section className="detection-page">
       <div className="criteria-header">
         <h1>Kriteria 4 : Diagnosa Perubahan Gairah</h1>
->>>>>>> ddfccaec5af00bcaaaa9f2d51a13b178289ebeb6
       </div>
       {isFetch ? (
         <div>

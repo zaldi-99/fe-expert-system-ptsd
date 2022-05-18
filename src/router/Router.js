@@ -15,6 +15,7 @@ import AvoidanceDetection from "../pages/AvoidanceDetection";
 import MoodDetection from "../pages/MoodDetection";
 import ArousalDetection from "../pages/ArousalDetection";
 import AdminAddArticle from "../pages/admin/AdminAddArticle";
+import Result from "../pages/Result";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path="avoidance-detection" element={<AvoidanceDetection />} />
         <Route path="mood-detection" element={<MoodDetection />} />
         <Route path="arousal-detection" element={<ArousalDetection />} />
+        <Route path="result" element={<Result />} />
         <Route path="login-admin" element={<AdminLogin />} />
         <Route path="admin" element={<LandingAdmin />} />
         <Route path="symptom-list" element={<AdminSymptomList />} />

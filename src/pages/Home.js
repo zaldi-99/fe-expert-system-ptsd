@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 // import component
 
 // import style
@@ -6,20 +6,24 @@ import "./Home.css";
 import Hero from "../components/Hero";
 import Information from "../components/Information";
 import Navbar from "../components/Navbar";
-import Symptom from "../components/Symptom";
-import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
 const Home = () => {
+  const [isShow, setIsShow] = useState(false);
   return (
-    <Fragment>
+    <div className="page">
       <Navbar />
-      <Hero />
+      <Hero
+        fn={() => {
+          window.localStorage.clear();
+          setIsShow(true);
+        }}
+      />
       <Information />
-      <Symptom />
-      <Feedback />
       <Footer />
-    </Fragment>
+      <Modal show={isShow} closeModal={() => setIsShow(false)} />
+    </div>
   );
 };
 

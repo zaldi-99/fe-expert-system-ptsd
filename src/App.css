@@ -29,7 +29,15 @@ p {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 section {
@@ -42,7 +50,15 @@ button {
 
 a {
   text-decoration: none;
-  color: black;
+  color: blue;
+}
+
+.page {
+  display: flex;
+  max-width: 1440px;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
 }
 
 .btn,
@@ -50,7 +66,7 @@ a {
   background-color: #8d8daa;
   border: none;
   color: white;
-  padding: 10px 12px;
+  padding: 8px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -131,4 +147,27 @@ a {
 .custom-radio input:checked + .radio-btn > i {
   opacity: 1;
   transform: translateX(-50%) scale(1);
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .radio-btn {
+    width: 100px;
+    height: 40px;
+    padding: 0.5rem;
+  }
+  .btn {
+    padding: 5px 8px;
+  }
+  .detection-page {
+    padding: 4rem;
+  }
+  .detection-question h1 {
+    font-size: 1rem;
+  }
+  .detection-question p {
+    font-size: 0.6rem;
+  }
 }

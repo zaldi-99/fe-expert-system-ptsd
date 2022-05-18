@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import ArticleItem from "../components/ArticleItem";
 import "./Information.css";
@@ -26,7 +26,7 @@ const Information = () => {
     getArticleData();
   }, []);
   return (
-    <Fragment>
+    <div className="page">
       <Navbar />
       <section className="information-page">
         <div className="information-headline">
@@ -52,7 +52,7 @@ const Information = () => {
           ))}
         </div>
       </section>
-    </Fragment>
+    </div>
   );
 };
 

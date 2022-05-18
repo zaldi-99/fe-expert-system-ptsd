@@ -4,15 +4,40 @@
 }
 
 .hero-text {
-  max-width: 40%;
+  max-width: 50%;
+}
+
+.hero-title {
+  font-weight: 500;
 }
 
 .hero-subtitle {
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-.video-box {
-  background: red;
+.hero-disclaimer {
   width: 450px;
-  height: 350px;
+  margin-top: 1rem;
+  color: white;
+  padding: 0.5rem;
+  background: rgba(231, 91, 91, 0.89);
+  border-radius: 0.3rem;
+}
+
+.disclaimer-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer-message {
+  font-size: 0.8rem;
+}
+
+.hero-image {
+  width: 650px;
+}
+
+.hero-image img {
+  width: 100%;
 }

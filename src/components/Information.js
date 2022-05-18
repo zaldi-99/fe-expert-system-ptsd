@@ -5,7 +5,15 @@ const Information = () => {
   return (
     <section className="information-container">
       <div className="information-image">
-        <div className="video-box"></div>
+        <iframe
+          width="550"
+          height="350"
+          src="https://www.youtube.com/embed/CLyZjUVkhEQ"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className="information-text">
         <div className="information-title">

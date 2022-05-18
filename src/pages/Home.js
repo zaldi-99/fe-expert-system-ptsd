@@ -6,8 +6,6 @@ import "./Home.css";
 import Hero from "../components/Hero";
 import Information from "../components/Information";
 import Navbar from "../components/Navbar";
-import Symptom from "../components/Symptom";
-import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 
@@ -16,12 +14,15 @@ const Home = () => {
   return (
     <div className="page">
       <Navbar />
-      <Hero fn={() => setIsShow(true)} />
+      <Hero
+        fn={() => {
+          window.localStorage.clear();
+          setIsShow(true);
+        }}
+      />
       <Information />
-      <Symptom />
-      <Feedback />
       <Footer />
-      <Modal show={isShow} />
+      <Modal show={isShow} closeModal={() => setIsShow(false)} />
     </div>
   );
 };

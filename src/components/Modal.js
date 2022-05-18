@@ -50,6 +50,7 @@ const Modal = ({ show, closeModal }) => {
               onChange={e => {
                 setName(e.target.value);
               }}
+              required
             />
             <br />
             <label for="lname">Gender:</label> <br />
@@ -61,6 +62,7 @@ const Modal = ({ show, closeModal }) => {
                 setGender(e.target.value);
               }}
               value="laki-laki"
+              required
             />
             Laki-laki
             <input
@@ -71,6 +73,7 @@ const Modal = ({ show, closeModal }) => {
                 setGender(e.target.value);
               }}
               value="perempuan"
+              required
             />
             Perempuan
             <br />

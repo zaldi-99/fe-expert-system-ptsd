@@ -17,11 +17,11 @@ const Result = () => {
     const positif = "Positif";
     const negatif = "Negatif";
 
-    for (let i = 0; i < result.length; i++) {
-      if (result[i].answer === 0) {
-        return negatif;
-      }
-    }
+    // for (let i = 1; i < result.length; i++) {
+    //   if (result[i].answer === 0) {
+    //     return negatif;
+    //   }
+    // }
 
     // If user not experiencing trauma
     if (trauma.answer === 0) {
@@ -41,7 +41,20 @@ const Result = () => {
       (result[7].answer === 1 && result[8].answer === 1) ||
       (result[5].answer === 1 && result[7].answer === 1) ||
       (result[5].answer === 1 && result[8].answer === 1) ||
-      (result[6].answer === 1 && result[7].answer === 1)
+      (result[6].answer === 1 && result[7].answer === 1) ||
+      (result[5].answer === 1 &&
+        result[6].answer === 1 &&
+        result[7].answer === 1)
+    ) {
+      return positif;
+    }
+    if (
+      (result[9].answer === 1 && result[10].answer === 1) ||
+      (result[11].answer === 1 && result[12].answer === 1) ||
+      (result[9].answer === 1 && result[11].answer === 1) ||
+      (result[9].answer === 1 && result[12].answer === 1) ||
+      (result[10].answer === 1 && result[11].answer === 1) ||
+      (result[9].answer === 1 && result[10] && result[11].answer === 1)
     ) {
       return positif;
     } else {
@@ -70,7 +83,7 @@ const Result = () => {
           {result
             .filter(ans => ans.answer === 1)
             .map(ans => (
-              <div>
+              <div key={ans.question}>
                 <ul>
                   <li> {ans.question} </li>
                 </ul>
@@ -109,7 +122,6 @@ const Result = () => {
               href="/information"
               onClick={() => {
                 localStorage.clear();
-                window.location.reload();
               }}
             >
               Informasi
@@ -122,7 +134,6 @@ const Result = () => {
         onClick={() => {
           navigate("/");
           localStorage.clear();
-          window.location.reload();
         }}
       >
         Beranda

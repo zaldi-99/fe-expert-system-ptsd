@@ -1,0 +1,16 @@
+.contact-form-container {
+  background: rgba(228, 227, 227, 0.534);
+  margin-bottom: 2rem;
+}
+
+.contact-form-text {
+  margin-bottom: 1rem;
+}
+
+.contact-form-title {
+  font-weight: 500;
+}
+
+.contact-form-message {
+  height: 200px;
+}

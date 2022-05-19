@@ -163,13 +163,20 @@ a {
     height: 40px;
     padding: 0.5rem;
   }
+
+  .radio-answer-text {
+    font-size: 16px;
+  }
+
   .btn {
     padding: 5px 8px;
   }
   .detection-page {
-    padding: 4rem;
+    padding: 2rem;
   }
+
   .detection-question h1 {
+    font-weight: 500;
     font-size: 1rem;
   }
   .detection-question p {

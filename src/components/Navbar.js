@@ -12,10 +12,10 @@ const Navbar = () => {
             Beranda{" "}
           </Link>
           <Link to="/article" className="nav-link">
-            Informasi{" "}
+            Artikel{" "}
           </Link>
           <Link to="" className="nav-link">
-            Feedback
+            Tentang
           </Link>
         </div>
       </div>

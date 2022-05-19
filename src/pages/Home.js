@@ -8,6 +8,7 @@ import Information from "../components/Information";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
+import ContactForm from "../components/ContactForm";
 
 const Home = () => {
   const [isShow, setIsShow] = useState(false);
@@ -21,6 +22,7 @@ const Home = () => {
         }}
       />
       <Information />
+      <ContactForm />
       <Footer />
       <Modal show={isShow} closeModal={() => setIsShow(false)} />
     </div>

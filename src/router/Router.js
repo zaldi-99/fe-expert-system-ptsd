@@ -3,7 +3,6 @@ import { BrowserRouter as Routers, Route, Routes } from "react-router-dom";
 import LandingAdmin from "../pages/admin/LandingAdmin";
 import Home from "../pages/Home";
 import IntrusionDetection from "../pages/IntrusionDetection";
-import Information from "../pages/Information";
 import NotFound from "../pages/NotFound";
 import AdminSymptomList from "../pages/admin/AdminSymptomList";
 import AdminAddSymptom from "../pages/admin/AdminAddSymptom";
@@ -17,13 +16,14 @@ import ArousalDetection from "../pages/ArousalDetection";
 import AdminAddArticle from "../pages/admin/AdminAddArticle";
 import Result from "../pages/Result";
 import AdminEditSymptom from "../pages/admin/AdminEditSymptom";
+import Article from "../pages/Article";
 
 const Router = () => {
   return (
     <Routers>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="information" element={<Information />} />
+        <Route path="article" element={<Article />} />
         <Route path="traumatic-detection" element={<TraumaticDetection />} />
         <Route path="intrusion-detection" element={<IntrusionDetection />} />
         <Route path="avoidance-detection" element={<AvoidanceDetection />} />

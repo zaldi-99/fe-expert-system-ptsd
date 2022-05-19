@@ -12,7 +12,7 @@ const AnswerChoices = ({ fn, question, weight, answer }) => {
           ) : weight === 1 ? (
             <i className="fa-solid fa-thumbs-up"></i>
           ) : null}
-          <h3 className="">{answer}</h3>
+          <h3 className="radio-answer-text">{answer}</h3>
         </div>
       </span>
     </label>

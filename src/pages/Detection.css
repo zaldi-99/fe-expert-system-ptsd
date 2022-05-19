@@ -8,37 +8,3 @@
 .detection-answer {
   display: flex;
 }
-
-/* .detection-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.detection-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 700px;
-  max-width: 700px;
-}
-
-.detection-question {
-  margin-top: 2rem;
-}
-
-.detection-answer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.detection-answer-choice {
-  font-size: 20px;
-}
-
-.next-btn {
-  margin-top: 1rem;
-} */

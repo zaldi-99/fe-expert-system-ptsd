@@ -4,17 +4,14 @@ import "./styles/Information.css";
 const Information = () => {
   return (
     <section className="information-container">
-      <div className="information-image">
-        <iframe
-          width="550"
-          height="350"
-          src="https://www.youtube.com/embed/CLyZjUVkhEQ"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+      <iframe
+        className="information-video"
+        src="https://www.youtube.com/embed/CLyZjUVkhEQ"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
       <div className="information-text">
         <div className="information-title">
           <h1>Mengenal PTSD</h1>

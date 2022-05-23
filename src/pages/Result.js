@@ -98,23 +98,6 @@ const Result = () => {
             </h3>
           )}
         </div>
-        <div className="diagnose-source">
-          <p>
-            Hasil yang diberikan berdasarkan pada buku DSM-V. Disebutkan dalam
-            buku tersebut kriteria penderita dari PTSD yaitu
-          </p>
-          <p>
-            Mengalami peristiwa traumatis yang diikuti dengan gejala berikut :
-          </p>
-          <ol>
-            <li>Mengalami satu atau lebih gejala intrusi</li>
-            <li>Mengalami satu atau lebih gejala penghindaran</li>
-            <li>
-              Mengalami dua atau lebih gejala perubahan kognisi mood dan emosi
-            </li>
-            <li>Mengalami dua atau lebih gejala perubahan gairah</li>
-          </ol>
-        </div>
         <div className="diagnose-information">
           <p>
             Informasi lebih lanjut dapat dilihat pada halaman{" "}

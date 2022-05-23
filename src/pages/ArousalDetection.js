@@ -50,12 +50,12 @@ const ArousalDetection = () => {
   return (
     <section className="detection-page">
       <div className="criteria-header">
-        <h1>Kriteria 4 : Diagnosa Perubahan Gairah</h1>
+        <h1>Kriteria 4 : Diagnosa Perubahan Gairah dan Reaktivitas</h1>
       </div>
       {isFetch ? (
         <div>
           {arousalSymptom
-            .filter(data => data.kategori === "Arousal")
+            .filter(data => data.kategori === "Gairah")
             .map(arousal => (
               <div key={arousal.id_gejala}>
                 <form>

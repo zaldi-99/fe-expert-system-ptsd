@@ -49,7 +49,7 @@ const AvoidanceDetection = () => {
       {isFetch ? (
         <div className="question-container">
           {avoidanceSymptom
-            .filter(data => data.kategori === "Avoidance")
+            .filter(data => data.kategori === "Penghindaran")
             .map(avoidance => (
               <div key={avoidance.id_gejala}>
                 <form>

@@ -77,6 +77,7 @@ const TraumaticDetection = () => {
                   setTraumaticAnswer(1);
                   answers.addAnswer(
                     traumaticSymptom.id_gejala,
+                    traumaticSymptom.kode_gejala,
                     traumaticSymptom.gejala,
                     1
                   );
@@ -90,6 +91,7 @@ const TraumaticDetection = () => {
                   setTraumaticAnswer(0);
                   answers.addAnswer(
                     traumaticSymptom.id_gejala,
+                    traumaticSymptom.kode_gejala,
                     traumaticSymptom.gejala,
                     0
                   );

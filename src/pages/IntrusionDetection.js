@@ -70,6 +70,7 @@ const IntrusionDetection = () => {
                         setAnswer(1);
                         answers.addAnswer(
                           intrusion.id_gejala,
+                          intrusion.kode_gejala,
                           intrusion.gejala,
                           1
                         );
@@ -83,6 +84,7 @@ const IntrusionDetection = () => {
                         setAnswer(0);
                         answers.addAnswer(
                           intrusion.id_gejala,
+                          intrusion.kode_gejala,
                           intrusion.gejala,
                           0
                         );

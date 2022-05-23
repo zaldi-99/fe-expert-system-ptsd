@@ -9,13 +9,13 @@ import { createContext, useState } from "react";
 // ]
 export const AnswerContext = createContext({
   answers: [],
-  addAnswer: (id, question, answer) => {},
+  addAnswer: (id, code, question, answer) => {},
 });
 
 export const AnswerProvider = ({ children }) => {
   const [answers, setAnswers] = useState([]);
 
-  const addAnswer = (id, question, answer) => {
+  const addAnswer = (id, code, question, answer) => {
     const copy = answers.slice();
 
     for (let i = 0; i < answers.length; i++) {
@@ -26,7 +26,7 @@ export const AnswerProvider = ({ children }) => {
       }
     }
 
-    setAnswers(current => [...current, { id, question, answer }]);
+    setAnswers(current => [...current, { id, code, question, answer }]);
   };
 
   return (

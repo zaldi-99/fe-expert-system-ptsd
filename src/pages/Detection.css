@@ -1,0 +1,10 @@
+.criteria-header {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detection-answer {
+  display: flex;
+}

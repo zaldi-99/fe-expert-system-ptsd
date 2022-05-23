@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+html {
+  --color-black: black;
+  --color-white: white;
+  --color-dark-white: #dfdfde;
+  /* background: var(--color-dark-white); */
+  /* background: #8d8daa; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+section {
+  padding: 3rem 6rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.page {
   display: flex;
+  max-width: 1440px;
+  justify-content: center;
   flex-direction: column;
+  margin: auto;
+}
+
+.btn,
+.next-btn {
+  background-color: #8d8daa;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: red;
+  color: white;
+  text-align: center;
+  height: 2rem;
+}
+
+/* Style for GAD7 Question */
+.custom-radio input {
+  display: none;
+}
+
+.radio-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radio-btn {
+  background-color: #fff;
+  margin: 20px 10px;
+  width: 200px;
+  height: 80px;
+  border: 3px solid transparent;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px #c3c3c367;
+  cursor: pointer;
+  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.radio-btn > i {
+  color: #fff;
+  background-color: #8373e6;
+  font-size: 14px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(4);
+  border-radius: 50px;
+  padding: 3px;
+  transition: 0.2s;
+  pointer-events: none;
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.radio-btn .answer-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.radio-btn .answer-icon i {
+  color: #8373e6;
+  font-size: 18px;
+}
+
+.custom-radio input:checked + .radio-btn {
+  border: 3px solid #7463e7;
+}
+
+.custom-radio input:checked + .radio-btn > i {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .radio-btn {
+    width: 100px;
+    height: 40px;
+    padding: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .radio-answer-text {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 5px 8px;
+  }
+  .detection-page {
+    padding: 2rem;
+  }
+
+  .detection-question h1 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .detection-question p {
+    font-size: 0.6rem;
   }
 }

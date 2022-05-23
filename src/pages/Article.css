@@ -1,0 +1,98 @@
+.article-header {
+  font-size: 2.5rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.article-headline {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.article-headline-image {
+  width: 400px;
+  height: 250px;
+}
+
+.article-headline-content {
+  margin-left: 1.5rem;
+}
+
+.article-headline-content-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  width: 550px;
+  font-weight: 500;
+}
+
+.article-headline-content-description {
+  width: 600px;
+  text-align: justify;
+}
+
+.article-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Article Item */
+.article-card {
+  width: 350px;
+  height: 380px;
+  box-shadow: 7px 4px 21px -5px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 7px 4px 21px -5px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 7px 4px 21px -5px rgba(0, 0, 0, 0.43);
+}
+
+.article-card-image {
+  width: 100%;
+  height: 160px;
+  background: blue;
+}
+
+.article-card-content {
+  text-align: justify;
+  padding: 0.2rem 0.5rem;
+}
+
+.article-card-title {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .article-page {
+    padding: 2rem;
+  }
+
+  .article-header {
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .article-headline-image {
+    display: none;
+  }
+
+  .article-headline-content {
+    margin-left: 0rem;
+  }
+
+  .article-headline-content-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    width: 350px;
+    font-weight: 500;
+  }
+
+  .article-headline-content-description {
+    width: 350px;
+  }
+}

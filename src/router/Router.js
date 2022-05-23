@@ -17,6 +17,7 @@ import AdminAddArticle from "../pages/admin/AdminAddArticle";
 import Result from "../pages/Result";
 import AdminEditSymptom from "../pages/admin/AdminEditSymptom";
 import Article from "../pages/Article";
+import AdminMessageList from "../pages/admin/AdminMessageList";
 
 const Router = () => {
   return (
@@ -30,14 +31,15 @@ const Router = () => {
         <Route path="mood-detection" element={<MoodDetection />} />
         <Route path="arousal-detection" element={<ArousalDetection />} />
         <Route path="result" element={<Result />} />
-        <Route path="login-admin" element={<AdminLogin />} />
+        <Route path="admin-login" element={<AdminLogin />} />
         <Route path="admin" element={<LandingAdmin />} />
-        <Route path="symptom-list" element={<AdminSymptomList />} />
-        <Route path="add-symptom" element={<AdminAddSymptom />} />
-        <Route path="edit-symptom/:id" element={<AdminEditSymptom />} />
-        <Route path="user-list" element={<AdminUsersList />} />
-        <Route path="article-list" element={<AdminArticleList />} />
-        <Route path="add-article" element={<AdminAddArticle />} />
+        <Route path="admin-symptom-list" element={<AdminSymptomList />} />
+        <Route path="admin-add-symptom" element={<AdminAddSymptom />} />
+        <Route path="admin-edit-symptom/:id" element={<AdminEditSymptom />} />
+        <Route path="admin-user-list" element={<AdminUsersList />} />
+        <Route path="admin-article-list" element={<AdminArticleList />} />
+        <Route path="admin-add-article" element={<AdminAddArticle />} />
+        <Route path="admin-message-list" element={<AdminMessageList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Routers>

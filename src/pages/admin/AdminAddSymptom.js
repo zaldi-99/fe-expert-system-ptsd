@@ -19,7 +19,7 @@ const AdminAddSymptom = () => {
         kategori: kategori,
       })
       .then(() => {
-        navigate("/symptom-list");
+        navigate("/admin-symptom-list");
       });
   };
 
@@ -71,12 +71,12 @@ const AdminAddSymptom = () => {
               }}
             >
               <option value="default" hidden>
-                Pilih Kategori
+                Pilih Kategori Gejala
               </option>
-              <option value="Intrusi">Intrusion</option>
-              <option value="Avoidance">Avoidance</option>
-              <option value="Mood">Mood or Emotion</option>
-              <option value="Arousal">Arousal</option>
+              <option value="Intrusi">Intrusi</option>
+              <option value="Penghindaran">Penghindaran</option>
+              <option value="Mood">Perubahan Mood</option>
+              <option value="Gairah">Perubahan Gairah</option>
             </select>
             <br />
             <input type="submit" value="Kirim" className="submit-btn" />

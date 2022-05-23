@@ -1,53 +1,60 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
 
 const AdminMessageList = () => {
   const navigate = useNavigate();
 
+  const [feedback, setFeedback] = useState();
+
+  const getAllFeedback = () => {
+    axios.get("http://localhost:3001/api/feedback-list").then(res => {
+      console.log(res.data);
+      setFeedback(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getAllFeedback();
+  }, []);
+
   const columns = [
     {
-      name: "ID Artikel",
-      selector: row => row.id_artikel,
+      name: "ID Feedback",
+      selector: row => row.id_feedback,
     },
     {
-      name: "Judul",
+      name: "Nama Pengguna",
+      selector: row => row.nama,
+    },
+    {
+      name: "Email Pengguna",
+      selector: row => row.email,
+    },
+    {
+      name: "Subjek",
+      selector: row => row.subjek,
+    },
+    {
+      name: "Pesan",
       cell: row => (
         <div>
-          <p>{row.judul}</p>
+          <p>{row.pesan}</p>
         </div>
       ),
-    },
-    {
-      name: "Deskripsi",
-      cell: row => (
-        <div>
-          <p>{row.deskripsi}</p>
-        </div>
-      ),
-    },
-    {
-      name: "Sumber",
-      selector: row => row.sumber,
-    },
-    {
-      name: "URL",
-      selector: row => row.url,
     },
     {
       name: "Action",
       cell: row => (
         <div style={{ display: "flex", gap: "1rem" }}>
           <button
-            id={row.id_gejala}
+            id={row.id_feedback}
             // onClick={() => {
             //   deleteData(row.id_gejala);
             // }}
           >
             <i className="fa-solid fa-trash-can"></i>
-          </button>
-          <button id={row.id_gejala}>
-            <i className="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
       ),
@@ -65,10 +72,9 @@ const AdminMessageList = () => {
         }}
       >
         <button onClick={() => navigate(-1)}>Kembali</button>
-        <button onClick={() => navigate("/add-article")}>Tambah Artikel</button>
       </div>
       <section>
-        <DataTable columns={columns} pagination />
+        <DataTable columns={columns} data={feedback} pagination />
       </section>
     </div>
   );

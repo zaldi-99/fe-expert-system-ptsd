@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/Information.css";
 
 const Information = () => {
+  const navigate = useNavigate();
   return (
     <section className="information-container">
       <iframe
@@ -24,7 +26,9 @@ const Information = () => {
             Deserunt molestiae nihil facilis corrupti quasi?
           </p>
         </div>
-        <div className="btn">Lihat Artikel</div>
+        <div className="btn" onClick={() => navigate("/article")}>
+          Lihat Artikel
+        </div>
       </div>
     </section>
   );

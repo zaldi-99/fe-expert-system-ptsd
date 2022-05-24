@@ -66,6 +66,7 @@ const AvoidanceDetection = () => {
                         setAnswer(1);
                         answers.addAnswer(
                           avoidance.id_gejala,
+                          avoidance.kode_gejala,
                           avoidance.gejala,
                           1
                         );
@@ -79,6 +80,7 @@ const AvoidanceDetection = () => {
                         setAnswer(0);
                         answers.addAnswer(
                           avoidance.id_gejala,
+                          avoidance.kode_gejala,
                           avoidance.gejala,
                           0
                         );

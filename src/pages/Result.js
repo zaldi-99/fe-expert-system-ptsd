@@ -25,6 +25,7 @@ const Result = () => {
 
     // If user not experiencing trauma
     if (trauma.answer === 0) {
+      console.log("Aturan Pertama");
       return negatif;
     }
     // Experiencing one or more intrusion symptom
@@ -38,23 +39,21 @@ const Result = () => {
     // Experiencing two or more changing mood
     if (
       (result[5].answer === 1 && result[6].answer === 1) ||
-      (result[7].answer === 1 && result[8].answer === 1) ||
       (result[5].answer === 1 && result[7].answer === 1) ||
       (result[5].answer === 1 && result[8].answer === 1) ||
       (result[6].answer === 1 && result[7].answer === 1) ||
-      (result[5].answer === 1 &&
-        result[6].answer === 1 &&
-        result[7].answer === 1)
+      (result[6].answer === 1 && result[8].answer === 1) ||
+      (result[7].answer === 1 && result[8].answer === 1)
     ) {
       return positif;
     }
     if (
       (result[9].answer === 1 && result[10].answer === 1) ||
-      (result[11].answer === 1 && result[12].answer === 1) ||
       (result[9].answer === 1 && result[11].answer === 1) ||
       (result[9].answer === 1 && result[12].answer === 1) ||
       (result[10].answer === 1 && result[11].answer === 1) ||
-      (result[9].answer === 1 && result[10] && result[11].answer === 1)
+      (result[10].answer === 1 && result[12].answer === 1) ||
+      (result[11].answer === 1 && result[12].answer === 1)
     ) {
       return positif;
     } else {
@@ -79,7 +78,7 @@ const Result = () => {
       </div>
       <div className="result-conclusion">
         <div className="user-answer">
-          <p>Sebagai informasi, jawaban yang anda berikan sebagai berikut :</p>
+          <p>Jawaban yang anda berikan sebagai berikut :</p>
           {result
             .filter(ans => ans.answer === 1)
             .map(ans => (

@@ -68,7 +68,12 @@ const MoodDetection = () => {
                       answer="Ya"
                       fn={() => {
                         setAnswer(1);
-                        answers.addAnswer(mood.id_gejala, mood.gejala, 1);
+                        answers.addAnswer(
+                          mood.id_gejala,
+                          mood.kode_gejala,
+                          mood.gejala,
+                          1
+                        );
                       }}
                     />
                     <AnswerChoices
@@ -77,7 +82,12 @@ const MoodDetection = () => {
                       answer="Tidak"
                       fn={() => {
                         setAnswer(0);
-                        answers.addAnswer(mood.id_gejala, mood.gejala, 0);
+                        answers.addAnswer(
+                          mood.id_gejala,
+                          mood.kode_gejala,
+                          mood.gejala,
+                          0
+                        );
                       }}
                     />
                   </div>

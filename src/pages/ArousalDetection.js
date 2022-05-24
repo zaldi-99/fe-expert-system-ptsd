@@ -70,7 +70,12 @@ const ArousalDetection = () => {
                       answer="Ya"
                       fn={() => {
                         setAnswer(1);
-                        answers.addAnswer(arousal.id_gejala, arousal.gejala, 1);
+                        answers.addAnswer(
+                          arousal.id_gejala,
+                          arousal.kode_gejala,
+                          arousal.gejala,
+                          1
+                        );
                       }}
                     />
                     <AnswerChoices
@@ -79,7 +84,12 @@ const ArousalDetection = () => {
                       answer="Tidak"
                       fn={() => {
                         setAnswer(0);
-                        answers.addAnswer(arousal.id_gejala, arousal.gejala, 0);
+                        answers.addAnswer(
+                          arousal.id_gejala,
+                          arousal.kode_gejala,
+                          arousal.gejala,
+                          0
+                        );
                       }}
                     />
                   </div>

@@ -62,6 +62,7 @@ const TraumaticDetection = () => {
         <div className="detection-form">
           <form onChange={e => console.log(e.target.checked)}>
             <div className="detection-question">
+              <p>Apakah anda...</p>
               <h1>{traumaticSymptom.gejala}</h1>
               <p>
                 (seperti kecelakaan, kejahatan seksual, orang yang dicintai

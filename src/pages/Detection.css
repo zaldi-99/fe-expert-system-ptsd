@@ -5,6 +5,10 @@
   margin-bottom: 1rem;
 }
 
+.detection-question p {
+  font-size: 1.3rem;
+}
+
 .detection-answer {
   display: flex;
 }

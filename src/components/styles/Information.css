@@ -12,12 +12,14 @@
 }
 
 .information-subtitle {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
 .information-video {
   width: 550px;
   height: 350px;
+  margin-right: 2rem;
 }
 
 @media only screen and (max-width: 540px) {

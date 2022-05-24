@@ -18,6 +18,7 @@ import Result from "../pages/Result";
 import AdminEditSymptom from "../pages/admin/AdminEditSymptom";
 import Article from "../pages/Article";
 import AdminMessageList from "../pages/admin/AdminMessageList";
+import AboutSystem from "../pages/AboutSystem";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="article" element={<Article />} />
+        <Route path="about" element={<AboutSystem />} />
         <Route path="traumatic-detection" element={<TraumaticDetection />} />
         <Route path="intrusion-detection" element={<IntrusionDetection />} />
         <Route path="avoidance-detection" element={<AvoidanceDetection />} />

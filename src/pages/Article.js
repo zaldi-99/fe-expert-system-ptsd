@@ -30,6 +30,15 @@ const Article = () => {
   useEffect(() => {
     getArticleData();
   }, []);
+
+  const truncateTitle = (str, num) => {
+    if (num > str.length) {
+      return str + "";
+    } else {
+      str = str.substring(0, num);
+      return str + "...";
+    }
+  };
   return (
     <div className="page">
       <Navbar />
@@ -48,20 +57,29 @@ const Article = () => {
               </div>
               <div className="article-headline-content">
                 <p className="article-headline-content-title">
-                  {headline.judul}
+                  {/* {headline.judul} */}
+                  Judul Artikel
                 </p>
                 <p className="article-headline-content-description">
-                  {headline.deskripsi}
+                  {/* {headline.deskripsi} */}
+                  {truncateTitle(
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaqueipsa quae ab illo inventore veritatis et quasi architectobeatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatemquia voluptas sit aspernatur aut odit aut fugit, sed quiaconsequuntur magni dolores eos qui ratione voluptatem sequinesciunt. Neque porro quisquam est, qui dolorem ipsum quia",
+                    200
+                  )}
                 </p>
                 <button className="btn">
-                  <a href={headline.url} target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.kompas.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Lihat
                   </a>
                 </button>
               </div>
             </div>
             <div className="article-list">
-              {data.map((data, index) => (
+              {/* {data.map((data, index) => (
                 <ArticleItem
                   key={index}
                   title={data.judul}
@@ -69,7 +87,31 @@ const Article = () => {
                   source={data.sumber}
                   url={data.url}
                 />
-              ))}
+              ))} */}
+              <ArticleItem
+                title="Judul artikel"
+                desc="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                source="kompas.com"
+                url="https://www.kompas.com/"
+              />
+              <ArticleItem
+                title="Judul artikel"
+                desc="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                source="kompas.com"
+                url="https://www.kompas.com/"
+              />
+              <ArticleItem
+                title="Judul artikel"
+                desc="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                source="kompas.com"
+                url="https://www.kompas.com/"
+              />
+              <ArticleItem
+                title="Judul artikel"
+                desc="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                source="kompas.com"
+                url="https://www.kompas.com/"
+              />
             </div>
           </div>
         ) : (

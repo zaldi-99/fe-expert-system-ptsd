@@ -4,32 +4,33 @@ import Navbar from "../components/Navbar";
 import ArticleItem from "../components/ArticleItem";
 import "./Article.css";
 import swal from "@sweetalert/with-react";
+import Footer from "../components/Footer";
 
 const Article = () => {
   const [data, setData] = useState([]);
   const [headline, setHeadline] = useState([]);
 
-  const [isFetch, setIsFetch] = useState(false);
+  const [isFetch, setIsFetch] = useState(true);
 
-  const getArticleData = () => {
-    axios
-      .get("http://localhost:3001/api/article-list")
-      .then(res => {
-        setData(res.data);
-        setHeadline(res.data[0]);
-        setIsFetch(true);
-        console.log(res.data);
-      })
-      .catch(err => {
-        swal("Oops terjadi kesalahan", `${err}`, "error");
-        setIsFetch(false);
-        console.log(err);
-      });
-  };
+  // const getArticleData = () => {
+  //   axios
+  //     .get("http://localhost:3001/api/article-list")
+  //     .then(res => {
+  //       setData(res.data);
+  //       setHeadline(res.data[0]);
+  //       setIsFetch(true);
+  //       console.log(res.data);
+  //     })
+  //     .catch(err => {
+  //       swal("Oops terjadi kesalahan", `${err}`, "error");
+  //       setIsFetch(false);
+  //       console.log(err);
+  //     });
+  // };
 
-  useEffect(() => {
-    getArticleData();
-  }, []);
+  // useEffect(() => {
+  //   getArticleData();
+  // }, []);
 
   const truncateTitle = (str, num) => {
     if (num > str.length) {
@@ -44,7 +45,7 @@ const Article = () => {
       <Navbar />
       <section className="article-page">
         <div className="article-header">
-          <p>Artikel Seputar PTSD</p>
+          <h1>Artikel Seputar PTSD</h1>
         </div>
         {isFetch ? (
           <div>
@@ -78,6 +79,7 @@ const Article = () => {
                 </button>
               </div>
             </div>
+
             <div className="article-list">
               {/* {data.map((data, index) => (
                 <ArticleItem
@@ -120,6 +122,7 @@ const Article = () => {
           </div>
         )}
       </section>
+      <Footer />
     </div>
   );
 };

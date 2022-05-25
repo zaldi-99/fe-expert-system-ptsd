@@ -8,24 +8,73 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .modal-active {
+    opacity: 1;
+    pointer-events: initial;
+    transition: all .3s ease;
   }
   
   .modal-content {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     background: #fff;
+    /* border: 1px solid magenta; */
+    margin: 40px;
+    border-radius: .5rem;
+  }
+
+  .modal-form {
+    /* border: 1px solid green; */
+  }
+
+  .modal-form .modal-radio {
+    /* border: 1px solid black; */
+    margin-bottom: 1rem;
+  }
+
+  .modal-form .modal-radio-items {
+    margin-top: .2rem;
+  }
+
+  .modal-form .modal-radio-items label {
+    margin-right: 1rem;
   }
   
   .modal-header,
   .modal-footer {
-    padding: 10px;
+    padding: 20px;
+    /* border: 1px solid red; */
   }
   
   .modal-title {
     margin: 0;
   }
+
+  .modal-btn {
+    background-color: #8d8daa;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: .8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .modal-btn-batal {
+    background-color: var(--red-1);
+  }
   
   .modal-body {
-    padding: 10px;
+    padding: 20px;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
   }

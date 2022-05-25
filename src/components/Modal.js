@@ -31,17 +31,17 @@ const Modal = ({ show, closeModal }) => {
       });
   };
 
-  if (!show) {
-    return null;
-  }
+  // if (!show) {
+  //   return null;
+  // }
   return (
-    <div className="modal">
+    <div className={show ? "modal modal-active" : "modal"}>
       <div className="modal-content">
         <div className="modal-header">
           <h4 className="modal-title">Masukan Nama dan Gender</h4>
         </div>
         <div className="modal-body">
-          <form
+          <form className="modal-form"
             onSubmit={e => {
               handleSubmit(e);
             }}
@@ -57,36 +57,42 @@ const Modal = ({ show, closeModal }) => {
               required
             />
             <br />
-            <label for="lname">Gender:</label> <br />
-            <input
-              type="radio"
-              id="male"
-              name="gender"
-              onChange={e => {
-                setGender(e.target.value);
-              }}
-              value="laki-laki"
-              required
-            />
-            Laki-laki
-            <input
-              type="radio"
-              id="female"
-              name="gender"
-              onChange={e => {
-                setGender(e.target.value);
-              }}
-              value="perempuan"
-              required
-            />
-            Perempuan
-            <br />
-            <input type="submit" value="Kirim" />
+
+            <div className="modal-radio">
+              <label className="modal-label" for="lname">Gender:</label> <br />
+                <div className="modal-radio-items">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    onChange={e => {
+                      setGender(e.target.value);
+                    }}
+                    value="laki-laki"
+                    required
+                  />
+                  <label className="modal-label" for="male">Laki-laki</label>
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    onChange={e => {
+                      setGender(e.target.value);
+                    }}
+                    value="perempuan"
+                    required
+                  />
+                  <label className="modal-label" for="female">Perempuan</label>
+                </div>
+            </div>
+
+
+            <input className="modal-btn" type="submit" value="Kirim" />
           </form>
         </div>
 
         <div className="modal-footer">
-          <button onClick={closeModal}>Batal</button>
+          <button className="modal-btn modal-btn-batal" onClick={closeModal}>Batal</button>
         </div>
       </div>
     </div>

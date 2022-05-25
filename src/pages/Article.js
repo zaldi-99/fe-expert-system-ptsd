@@ -35,7 +35,7 @@ const Article = () => {
       <Navbar />
       <section className="article-page">
         <div className="article-header">
-          <p>Artikel Seputar PTSD</p>
+          <h1>Artikel Seputar PTSD</h1>
         </div>
         {isFetch ? (
           <div>

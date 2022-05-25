@@ -28,19 +28,17 @@ const ArticleItem = ({ title, desc, source, url }) => {
         />
       </div>
       <div className="article-card-content">
-        <div className="article-card-content">
-          <p className="article-card-title">{truncateTitle(`${title}`, 75)}</p>
-          <p className="article-card-subtitle">
-            {truncateText(`${desc}`, 120)}{" "}
-            <span>
-              <a href={`${url}`} target="_blank" rel="noreferrer">
-                Selengkapnya
-              </a>
-            </span>
-          </p>
-          <div className="article-card-source">
-            <p>Sumber : {source}</p>
-          </div>
+        <p className="article-card-title">{truncateTitle(`${title}`, 75)}</p>
+        <p className="article-card-subtitle">
+          {truncateText(`${desc}`, 120)}{" "}
+          <span>
+            <a href={`${url}`} target="_blank" rel="noreferrer">
+              Selengkapnya
+            </a>
+          </span>
+        </p>
+        <div className="article-card-source">
+          <p>Sumber : {source}</p>
         </div>
       </div>
     </div>

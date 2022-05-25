@@ -48,7 +48,7 @@ const ContactForm = () => {
       </div>
       <div className="contact-form">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Nama*</label>
+          <label htmlFor="name">Nama<span>*</span></label>
           <input
             type="text"
             id="name"
@@ -61,7 +61,7 @@ const ContactForm = () => {
             required
           />
 
-          <label htmlFor="email">Email*</label>
+          <label htmlFor="email">Email<span>*</span></label>
           <input
             type="email"
             id="email"
@@ -72,7 +72,7 @@ const ContactForm = () => {
             required
           />
 
-          <label htmlFor="subject">Subjek*</label>
+          <label htmlFor="subject">Subjek<span>*</span></label>
           <input
             type="text"
             id="subject"
@@ -82,7 +82,7 @@ const ContactForm = () => {
             value={subject}
             required
           />
-          <label htmlFor="message">Pesan*</label>
+          <label htmlFor="message">Pesan<span>*</span></label>
           <textarea
             type="text"
             id="message"
@@ -93,7 +93,7 @@ const ContactForm = () => {
             value={message}
             required
           />
-          <input type="submit" value="Submit" />
+          <input className="contact-button" type="submit" value="Submit" />
         </form>
       </div>
     </section>

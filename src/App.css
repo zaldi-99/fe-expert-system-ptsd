@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 :root {
-  --gray-1 : #8D8DAA;
-  --gray-2 : #DFDFDE;
-  --white : #F7F5F2;
-  --white-2 : #d4d0ca;
-  --red : #F56D91;
-  --red-1 : rgba(231, 91, 91, 0.89);
+  --gray-1: #8d8daa;
+  --gray-2: #dfdfde;
+  --white: #f7f5f2;
+  --white-2: #d4d0ca;
+  --red: #f56d91;
+  --red-1: rgba(231, 91, 91, 0.89);
 }
 
 html {
@@ -50,7 +50,7 @@ h3 {
 }
 
 section {
-  padding: 3rem 6rem;
+  padding: 2rem 4rem;
 }
 
 img {
@@ -95,7 +95,7 @@ a {
   text-align: center;
   padding: 2rem;
   border-top: 1px solid var(--white-2);
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 /* Style for GAD7 Question */

@@ -149,6 +149,6 @@
 @media only screen and (max-width: 425px) {
   /* For handphone: */
   .hero-container {
-    height: calc((100vh - 60px) - 80px);
+    height: calc((80vh - 60px) - 80px);
   }
 }

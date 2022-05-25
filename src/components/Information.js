@@ -16,14 +16,17 @@ const Information = () => {
       ></iframe>
       <div className="information-text">
         <div className="information-title">
-          <h1>Mengenal PTSD</h1>
+          <h1>Seputar PTSD</h1>
         </div>
         <div className="information-subtitle">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus tenetur molestiae, corporis asperiores laudantium
-            veniam quae ex quasi soluta aspernatur nam a earum obcaecati!
-            Deserunt molestiae nihil facilis corrupti quasi?
+            Posttraumatic stress disorder (PTSD) atau gangguan stress
+            pascatrauma adalah gangguan mental yang terjadi setelah seseorang
+            mengalami atau menyaksikan peristiwa traumatis. Gejala yang identik
+            dengan PTSD adalah teringkat kembali pada kejadian traumatis, namun
+            tidak semua orang yang teringat dengan peristiwa traumatis berarti
+            terserang PTSD. Silahkan simak video dan informasi lebih lanjut
+            seputar PTSD pada halaman artikel.
           </p>
         </div>
         <div className="btn" onClick={() => navigate("/article")}>

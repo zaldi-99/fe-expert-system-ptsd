@@ -36,7 +36,6 @@ const AboutSystem = () => {
               seorang pakar yaitu psikolog dari UMN.
             </p>
           </div>
-
           <div className="about-information-item">
             <div className="about-heading">
               <h3>Forward Chaining</h3>
@@ -45,10 +44,10 @@ const AboutSystem = () => {
               Forward chaining merupakan salah satu metode yang dapat digunakan
               dalam pembuatan sistem pakar. Pada metode ini dilakukan pelacakan
               kedepan berdasarkan pada fakta yang ada kemudian mengarahkan pada
-              kesimpulan. <br /> <br />
-              Dalam menentukan seseorang terdiagnosa ptsd atau tidak adalah
-              dengan menerapkan aturan-aturan yang diambil bersama dengan pakar
-              dan juga buku DSM-IV. Aturan tersebut adalah sebagai berikut :
+              kesimpulan. Dalam menentukan seseorang terdiagnosa ptsd atau tidak
+              adalah dengan menerapkan aturan-aturan yang diambil bersama dengan
+              pakar dan juga buku DSM-IV. Aturan tersebut adalah sebagai berikut
+              :
             </p>
             <ol>
               <li>

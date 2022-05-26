@@ -44,12 +44,14 @@ const ContactForm = () => {
           <h1>Hubungi Kami</h1>
         </div>
         <div className="contact-form-desc">
-          <p>Silakan sampaikan pesan anda melalui form</p>
+          <p>Silahkan sampaikan pesan anda melalui form berikut</p>
         </div>
       </div>
       <div className="contact-form">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Nama<span>*</span></label>
+          <label htmlFor="name">
+            Nama<span>*</span>
+          </label>
           <input
             type="text"
             id="name"
@@ -62,7 +64,9 @@ const ContactForm = () => {
             required
           />
 
-          <label htmlFor="email">Email<span>*</span></label>
+          <label htmlFor="email">
+            Email<span>*</span>
+          </label>
           <input
             type="email"
             id="email"
@@ -73,7 +77,9 @@ const ContactForm = () => {
             required
           />
 
-          <label htmlFor="subject">Subjek<span>*</span></label>
+          <label htmlFor="subject">
+            Subjek<span>*</span>
+          </label>
           <input
             type="text"
             id="subject"
@@ -83,7 +89,9 @@ const ContactForm = () => {
             value={subject}
             required
           />
-          <label htmlFor="message">Pesan<span>*</span></label>
+          <label htmlFor="message">
+            Pesan<span>*</span>
+          </label>
           <textarea
             type="text"
             id="message"

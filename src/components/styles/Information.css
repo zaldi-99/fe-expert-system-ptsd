@@ -36,6 +36,7 @@
   max-width: 550px;
   /* border: 1px solid black; */
   height: 350px;
+  margin-right: 2rem;
 }
 
 @media only screen and (max-width: 540px) {

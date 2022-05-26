@@ -24,6 +24,7 @@ const ContactForm = () => {
         resetForm();
       })
       .catch(err => {
+        swal("Oops terjadi kesalahan", `${err}`, "error");
         console.log(err);
       });
   };

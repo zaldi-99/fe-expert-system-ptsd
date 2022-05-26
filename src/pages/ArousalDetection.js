@@ -50,7 +50,7 @@ const ArousalDetection = () => {
   return (
     <section className="detection-page">
       <div className="criteria-header">
-        <h1>Kriteria 4 : Diagnosa Perubahan Gairah dan Reaktivitas</h1>
+        <h1>Kriteria 5 : Diagnosa Perubahan Gairah dan Reaktivitas</h1>
       </div>
       {isFetch ? (
         <div>

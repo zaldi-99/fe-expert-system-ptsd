@@ -26,8 +26,8 @@
 
 @media only screen and (min-width: 540px) {
   .information-subtitle {
-    font-size: 1.2rem !important;
-    margin-bottom: 2rem;
+    font-size: 1rem !important;
+    margin-bottom: 1rem;
   }
 }
 
@@ -36,6 +36,7 @@
   max-width: 550px;
   /* border: 1px solid black; */
   height: 350px;
+  margin-right: 2rem;
 }
 
 @media only screen and (max-width: 540px) {

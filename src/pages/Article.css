@@ -1,16 +1,13 @@
 .article-page {
   /* border: 1px solid black; */
-	min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 }
 
 .article-header {
-	border-bottom: 1px solid var(--white-2);
-	padding-bottom: 1rem;
-	margin-bottom: 1rem;
-}
-
-.article-header h1 {
-	font-weight: 500;
+  font-weight: 500;
+  border-bottom: 1px solid var(--white-2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .article-headline {
@@ -26,7 +23,7 @@
   width: 100%;
   max-width: 400px;
   height: 250px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   /* border: 1px solid magenta; */
 }
 
@@ -71,7 +68,7 @@
   max-width: 350px;
   min-height: 400px;
   background-color: var(--white);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -108,7 +105,7 @@
 }
 
 .article-card-source {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-top: 1rem;
 }
 

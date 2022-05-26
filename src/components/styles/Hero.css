@@ -4,7 +4,7 @@
   align-items: center;
   gap: 2rem;
   /* border: 1px solid black; */
-  height: calc((100vh - 6rem) - 80px);
+  height: calc((90vh - 6rem) - 80px);
   position: relative;
 }
 

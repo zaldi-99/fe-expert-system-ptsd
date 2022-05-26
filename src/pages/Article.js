@@ -6,6 +6,8 @@ import "./Article.css";
 import swal from "@sweetalert/with-react";
 import Footer from "../components/Footer";
 
+import DefaultImage from "../assets/default-article.jpg";
+
 const Article = () => {
   const [data, setData] = useState([]);
   const [headline, setHeadline] = useState([]);
@@ -43,10 +45,7 @@ const Article = () => {
           <div>
             <div className="article-headline">
               <div className="article-headline-image">
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
-                  alt="article headline"
-                />
+                <img src={DefaultImage} alt="article headline" />
               </div>
               <div className="article-headline-content">
                 <p className="article-headline-content-title">

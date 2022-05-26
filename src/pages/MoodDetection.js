@@ -48,7 +48,7 @@ const MoodDetection = () => {
   return (
     <section className="detection-page">
       <div className="criteria-header">
-        <h1>Kriteria 3 : Diagnosa Perubahan Mood</h1>
+        <h1>Kriteria 4 : Diagnosa Perubahan Mood</h1>
       </div>
       {isFetch ? (
         <div>
@@ -68,7 +68,12 @@ const MoodDetection = () => {
                       answer="Ya"
                       fn={() => {
                         setAnswer(1);
-                        answers.addAnswer(mood.id_gejala, mood.gejala, 1);
+                        answers.addAnswer(
+                          mood.id_gejala,
+                          mood.kode_gejala,
+                          mood.gejala,
+                          1
+                        );
                       }}
                     />
                     <AnswerChoices
@@ -77,7 +82,12 @@ const MoodDetection = () => {
                       answer="Tidak"
                       fn={() => {
                         setAnswer(0);
-                        answers.addAnswer(mood.id_gejala, mood.gejala, 0);
+                        answers.addAnswer(
+                          mood.id_gejala,
+                          mood.kode_gejala,
+                          mood.gejala,
+                          0
+                        );
                       }}
                     />
                   </div>

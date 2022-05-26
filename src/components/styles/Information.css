@@ -1,40 +1,66 @@
 .information-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  /* border: 1px solid black; */
+  height: calc(70vh - 6rem);
+  position: relative;
 }
 
 .information-text {
-  width: 600px;
+  width: 100%;
+  /* border: 1px solid black; */
+  /* max-width: 600px; */
 }
 
 .information-title {
   font-weight: 500;
-}
-
-.information-subtitle {
   margin-bottom: 1rem;
 }
 
+.information-subtitle {
+  font-size: 1rem !important;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 540px) {
+  .information-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1rem;
+  }
+}
+
 .information-video {
-  width: 550px;
+  width: 100%;
+  max-width: 550px;
+  /* border: 1px solid black; */
   height: 350px;
+  margin-right: 2rem;
 }
 
 @media only screen and (max-width: 540px) {
   /* For handphone: */
   .information-container {
-    padding: 2rem;
+    padding: 40px 40px;
     flex-direction: column;
+    justify-content: flex-start;
+    height: calc(100vh - 80px);
   }
 
   .information-video {
-    width: 340px;
-    height: 200px;
-    margin-bottom: 1rem;
+    height: 250px;
   }
-
+  /* 
   .information-text {
     width: 340px;
     text-align: justify;
+  } */
+}
+
+@media only screen and (max-width: 425px) {
+  /* For handphone: */
+  .information-container {
+    height: calc(100vh - 80px);
   }
 }

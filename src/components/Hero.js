@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Hero.css";
 import Logo from "../assets/hello.svg";
 
 const Hero = ({ fn }) => {
+  const [isClose, setIsClose] = useState(false);
+
+  const closeHandler = () => {
+    setIsClose(!isClose);
+  };
+
   return (
-    <section className="hero-container">
+    <section
+      className={
+        isClose ? "hero-container hero-container-close" : "hero-container"
+      }
+    >
       <div className="hero-text">
         <div className="hero-title">
           <h1>Selamat Datang</h1>
@@ -20,11 +30,22 @@ const Hero = ({ fn }) => {
         <div className="btn" onClick={fn}>
           Mulai Test
         </div>
-        <div className="hero-disclaimer">
-          <p className="disclaimer-title">Disclaimer</p>
-          <p className="disclaimer-message">
-            Sistem ini tidak direkomendasikan apabila anda dalam kondisi krisis
-            yang mengancam hidup Anda.
+        <div
+          className={
+            isClose
+              ? "hero-disclaimer hero-disclaimer--active"
+              : "hero-disclaimer"
+          }
+        >
+          <div className="hero-disclaimer-wrapper">
+            <p className="disclaimer-title">Disclaimer:</p>
+            <p className="disclaimer-message">
+              Sistem ini tidak direkomendasikan apabila anda dalam kondisi
+              krisis yang mengancam hidup Anda.
+            </p>
+          </div>
+          <p className="hero-disclaimer-close" onClick={closeHandler}>
+            X
           </p>
         </div>
       </div>

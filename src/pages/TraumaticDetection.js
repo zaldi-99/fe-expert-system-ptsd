@@ -62,6 +62,7 @@ const TraumaticDetection = () => {
         <div className="detection-form">
           <form onChange={e => console.log(e.target.checked)}>
             <div className="detection-question">
+              <p>Apakah anda...</p>
               <h1>{traumaticSymptom.gejala}</h1>
               <p>
                 (seperti kecelakaan, kejahatan seksual, orang yang dicintai
@@ -77,6 +78,7 @@ const TraumaticDetection = () => {
                   setTraumaticAnswer(1);
                   answers.addAnswer(
                     traumaticSymptom.id_gejala,
+                    traumaticSymptom.kode_gejala,
                     traumaticSymptom.gejala,
                     1
                   );
@@ -90,6 +92,7 @@ const TraumaticDetection = () => {
                   setTraumaticAnswer(0);
                   answers.addAnswer(
                     traumaticSymptom.id_gejala,
+                    traumaticSymptom.kode_gejala,
                     traumaticSymptom.gejala,
                     0
                   );

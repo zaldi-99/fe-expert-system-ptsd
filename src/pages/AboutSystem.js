@@ -46,7 +46,7 @@ const AboutSystem = () => {
               kedepan berdasarkan pada fakta yang ada kemudian mengarahkan pada
               kesimpulan. Dalam menentukan seseorang terdiagnosa ptsd atau tidak
               adalah dengan menerapkan aturan-aturan yang diambil bersama dengan
-              pakar dan juga buku DSM-IV. Aturan tersebut adalah sebagai berikut
+              pakar dan juga buku DSM-V. Aturan tersebut adalah sebagai berikut
               :
             </p>
             <ol>

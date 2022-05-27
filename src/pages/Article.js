@@ -14,25 +14,9 @@ const Article = () => {
 
   const [isFetch, setIsFetch] = useState(true);
 
-  // const getArticleData = () => {
-  //   axios
-  //     .get("http://localhost:3001/api/article-list")
-  //     .then(res => {
-  //       setData(res.data);
-  //       setHeadline(res.data[0]);
-  //       setIsFetch(true);
-  //       console.log(res.data);
-  //     })
-  //     .catch(err => {
-  //       swal("Oops terjadi kesalahan", `${err}`, "error");
-  //       setIsFetch(false);
-  //       console.log(err);
-  //     });
-  // };
-
   const getArticleData = () => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10")
+      .get("http://localhost:3001/api/article-list")
       .then(res => {
         setData(res.data);
         setHeadline(res.data[0]);
@@ -65,10 +49,10 @@ const Article = () => {
               </div>
               <div className="article-headline-content">
                 <p className="article-headline-content-title">
-                  {headline.title}
+                  {headline.judul}
                 </p>
                 <p className="article-headline-content-description">
-                  {headline.body}
+                  {headline.deskripsi}
                 </p>
                 <button className="btn">
                   <a
@@ -83,20 +67,11 @@ const Article = () => {
             </div>
 
             <div className="article-list">
-              {/* {data.map((data, index) => (
+              {data.map((data, index) => (
                 <ArticleItem
                   key={index}
                   title={data.judul}
                   desc={data.deskripsi}
-                  source={data.sumber}
-                  url={data.url}
-                />
-              ))} */}
-              {data.map((data, index) => (
-                <ArticleItem
-                  key={data.id}
-                  title={data.title}
-                  desc={data.body}
                   source={data.sumber}
                   url={data.url}
                 />

@@ -21,7 +21,7 @@ const AdminAddArticle = () => {
       })
       .then(res => {
         console.log(res);
-        navigate("/article-list");
+        navigate("/admin-article-list");
       })
       .catch(err => {
         console.log(err);

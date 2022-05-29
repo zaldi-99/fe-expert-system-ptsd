@@ -3,15 +3,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  /* border: 1px solid black; */
-  height: calc(70vh - 6rem);
-  position: relative;
+  margin-bottom: 3rem;
 }
 
 .information-text {
   width: 100%;
-  /* border: 1px solid black; */
-  /* max-width: 600px; */
 }
 
 .information-title {
@@ -34,7 +30,6 @@
 .information-video {
   width: 100%;
   max-width: 550px;
-  /* border: 1px solid black; */
   height: 350px;
   margin-right: 2rem;
 }
@@ -42,13 +37,14 @@
 @media only screen and (max-width: 540px) {
   /* For handphone: */
   .information-container {
-    padding: 40px 40px;
+    padding: 2rem;
     flex-direction: column;
     justify-content: flex-start;
-    height: calc(100vh - 80px);
+    /* height: 100vh; */
   }
 
   .information-video {
+    margin-right: 0;
     height: 250px;
   }
   /* 
@@ -60,7 +56,7 @@
 
 @media only screen and (max-width: 425px) {
   /* For handphone: */
-  .information-container {
+  /* .information-container {
     height: calc(100vh - 80px);
-  }
+  } */
 }

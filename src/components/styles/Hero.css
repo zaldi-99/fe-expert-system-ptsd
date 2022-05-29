@@ -100,13 +100,13 @@
 @media only screen and (max-width: 540px) {
   /* For handphone: */
   .hero-container {
-    padding: 40px 40px;
+    padding: 2rem;
     padding-top: calc(100px + 2rem);
     flex-direction: column-reverse;
     align-items: initial;
     transition: all 0.3s ease;
-    height: calc(100vh - 80px);
     justify-content: flex-end;
+    height: 500px;
   }
 
   .hero-container-close {
@@ -119,36 +119,11 @@
     align-items: flex-start;
     gap: 0.2rem;
   }
-  /* 
-  .hero-disclaimer {
-    width: 320px;
-  } */
-  /* 
-  .hero-text {
-    width: 340px;
-  } */
-  /* 
-  .hero-subtitle {
-    font-size: 0.8rem;
-    text-align: justify;
-  }
-
-  .disclaimer-title {
-    font-size: 1rem;
-  }
-
-  .disclaimer-message {
-    font-size: 0.6rem;
-  }
-
-  .hero-image {
-    display: none;
-  } */
 }
 
 @media only screen and (max-width: 425px) {
   /* For handphone: */
-  .hero-container {
+  /* .hero-container {
     height: calc((80vh - 60px) - 80px);
-  }
+  } */
 }

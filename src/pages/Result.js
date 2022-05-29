@@ -5,6 +5,7 @@ import "./Result.css";
 const Result = () => {
   const [result, setResult] = useState([]);
   const [trauma, setTrauma] = useState();
+  const [showDetail, setShowDetail] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,9 +24,8 @@ const Result = () => {
     //   }
     // }
 
-    // If user not experiencing trauma
+    // If user not experiencing trauma (Rule 1)
     if (trauma.answer === 0) {
-      console.log("Aturan Pertama");
       return negatif;
     }
     // Experiencing one or more intrusion symptom
@@ -77,18 +77,6 @@ const Result = () => {
         }
       </div>
       <div className="result-conclusion">
-        <div className="user-answer">
-          <p>Jawaban yang anda berikan sebagai berikut :</p>
-          {result
-            .filter(ans => ans.answer === 1)
-            .map(ans => (
-              <div key={ans.question}>
-                <ul>
-                  <li> {ans.question} </li>
-                </ul>
-              </div>
-            ))}
-        </div>
         <div className="diagnose-result">
           {result.length !== 0 && (
             <h3>
@@ -96,20 +84,45 @@ const Result = () => {
               <span>{forwardChaining()}</span>
             </h3>
           )}
+          {showDetail ? (
+            <button onClick={() => setShowDetail(false)}>Tutup</button>
+          ) : null}
         </div>
-        <div className="diagnose-information">
-          <p>
-            Informasi lebih lanjut dapat dilihat pada halaman{" "}
-            <a
-              href="/information"
-              onClick={() => {
-                localStorage.clear();
-              }}
-            >
-              Informasi
-            </a>
-          </p>
-        </div>
+        {showDetail ? (
+          <div className="user-answer">
+            <p>Jawaban yang anda berikan sebagai berikut :</p>
+            {result
+              .filter(ans => ans.answer === 1)
+              .map(ans => (
+                <div key={ans.question}>
+                  <ul>
+                    <li>
+                      {" "}
+                      {ans.question} ({ans.code})
+                    </li>
+                  </ul>
+                </div>
+              ))}
+            <p>Kesimpulan : Memenuhi aturan ketiga</p>
+            <div className="diagnose-information">
+              <p>
+                Informasi lebih lanjut dapat dilihat pada halaman{" "}
+                <a
+                  href="/information"
+                  onClick={() => {
+                    localStorage.clear();
+                  }}
+                >
+                  Informasi
+                </a>
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <button onClick={() => setShowDetail(true)}>Lihat Detail</button>
+          </div>
+        )}
       </div>
 
       <button

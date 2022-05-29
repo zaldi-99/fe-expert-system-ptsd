@@ -33,7 +33,6 @@ const Article = () => {
   useEffect(() => {
     getArticleData();
   }, []);
-
   return (
     <div className="page">
       <Navbar />
@@ -65,7 +64,6 @@ const Article = () => {
                 </button>
               </div>
             </div>
-
             <div className="article-list">
               {data.map((data, index) => (
                 <ArticleItem

@@ -5,7 +5,7 @@ import "./Result.css";
 const Result = () => {
   const [result, setResult] = useState([]);
   const [trauma, setTrauma] = useState();
-  const [showDetail, setShowDetail] = useState(false);
+  // const [showDetail, setShowDetail] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {

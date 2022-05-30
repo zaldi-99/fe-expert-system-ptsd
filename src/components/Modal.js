@@ -47,7 +47,7 @@ const Modal = ({ show, closeModal }) => {
               handleSubmit(e);
             }}
           >
-            <label for="name">Nama:</label> <br />
+            <label htmlFor="name">Nama:</label> <br />
             <input
               type="text"
               id="nama_pengguna"
@@ -59,7 +59,7 @@ const Modal = ({ show, closeModal }) => {
             />
             <br />
             <div className="modal-radio">
-              <label className="modal-label" for="lname">
+              <label className="modal-label" htmlFor="lname">
                 Gender:
               </label>{" "}
               <br />
@@ -74,7 +74,7 @@ const Modal = ({ show, closeModal }) => {
                   value="laki-laki"
                   required
                 />
-                <label className="modal-label" for="male">
+                <label className="modal-label" htmlFor="male">
                   Laki-laki
                 </label>
                 <input
@@ -87,7 +87,7 @@ const Modal = ({ show, closeModal }) => {
                   value="perempuan"
                   required
                 />
-                <label className="modal-label" for="female">
+                <label className="modal-label" htmlFor="female">
                   Perempuan
                 </label>
               </div>

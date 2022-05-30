@@ -20,7 +20,7 @@ export const AnswerProvider = ({ children }) => {
 
     for (let i = 0; i < answers.length; i++) {
       if (answers[i].id === id) {
-        copy[i] = { id, question, answer };
+        copy[i] = { id, code, question, answer };
         setAnswers(copy);
         return;
       }

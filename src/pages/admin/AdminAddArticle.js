@@ -13,7 +13,7 @@ const AdminAddArticle = () => {
   const handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/api/article", {
+      .post("https://expert-system-ptsd.herokuapp.com/api/article", {
         judul: title,
         deskripsi: description,
         sumber: source,

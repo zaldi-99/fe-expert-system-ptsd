@@ -34,7 +34,7 @@ const TraumaticDetection = () => {
 
   const getTraumaticSymptom = () => {
     axios
-      .get("http://localhost:3001/api/symptom")
+      .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(res => {
         setTraumaticSymptom(res.data[0]);
         console.log(res);

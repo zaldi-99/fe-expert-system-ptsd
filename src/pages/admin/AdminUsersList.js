@@ -11,7 +11,7 @@ const AdminUsersList = () => {
 
   const getAllUsers = () => {
     axios
-      .get("http://localhost:3001/api/user-list")
+      .get("https://expert-system-ptsd.herokuapp.com/api/user-list")
       .then(res => {
         setUsers(res.data);
         console.log(res);
@@ -22,7 +22,7 @@ const AdminUsersList = () => {
   };
 
   const deleteUser = id_pengguna => {
-    axios.delete(`http://localhost:3001/api/delete/user/${id_pengguna}`);
+    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/user/${id_pengguna}`);
   };
 
   useEffect(() => {

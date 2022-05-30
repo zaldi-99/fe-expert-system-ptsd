@@ -18,7 +18,7 @@ const MoodDetection = () => {
 
   const getSymptomData = () => {
     axios
-      .get("http://localhost:3001/api/symptom")
+      .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(function (res) {
         setMoodSymptom(res.data);
         setIsFetch(true);

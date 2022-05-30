@@ -12,7 +12,7 @@ const Modal = ({ show, closeModal }) => {
     localStorage.setItem("user", name);
     e.preventDefault();
     axios
-      .post("http://localhost:3001/api/user", {
+      .post("https://expert-system-ptsd.herokuapp.com/api/user", {
         nama: name,
         gender: gender,
       })

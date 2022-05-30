@@ -10,7 +10,7 @@ const AdminArticleList = () => {
   const navigate = useNavigate();
 
   const getAllArticle = () => {
-    axios.get("http://localhost:3001/api/article-list").then(res => {
+    axios.get("https://expert-system-ptsd.herokuapp.com/api/article-list").then(res => {
       console.log(res.data);
       setArticleList(res.data);
     });
@@ -20,7 +20,7 @@ const AdminArticleList = () => {
   }, []);
 
   const deleteData = id_artikel => {
-    axios.delete(`http://localhost:3001/api/delete/article/${id_artikel}`);
+    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/article/${id_artikel}`);
   };
 
   const columns = [

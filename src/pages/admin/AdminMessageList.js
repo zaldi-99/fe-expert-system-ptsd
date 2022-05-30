@@ -9,7 +9,7 @@ const AdminMessageList = () => {
   const [feedback, setFeedback] = useState();
 
   const getAllFeedback = () => {
-    axios.get("http://localhost:3001/api/feedback-list").then(res => {
+    axios.get("https://expert-system-ptsd.herokuapp.com/api/feedback-list").then(res => {
       console.log(res.data);
       setFeedback(res.data);
     });

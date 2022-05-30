@@ -18,7 +18,7 @@ const ArousalDetection = () => {
 
   const getSymptomData = () => {
     axios
-      .get("http://localhost:3001/api/symptom")
+      .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(function (res) {
         setArousalSymptom(res.data);
         setIsFetch(true);

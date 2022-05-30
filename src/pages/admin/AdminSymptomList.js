@@ -10,7 +10,7 @@ const AdminListSymptom = () => {
   const navigate = useNavigate();
 
   const getAllSymptom = () => {
-    axios.get("http://localhost:3001/api/symptom").then(res => {
+    axios.get("https://expert-system-ptsd.herokuapp.com/api/symptom").then(res => {
       console.log(res.data);
       setSymptom(res.data);
     });
@@ -20,7 +20,7 @@ const AdminListSymptom = () => {
   }, []);
 
   const deleteData = id_gejala => {
-    axios.delete(`http://localhost:3001/api/delete/symptom/${id_gejala}`);
+    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/symptom/${id_gejala}`);
   };
 
   const columns = [

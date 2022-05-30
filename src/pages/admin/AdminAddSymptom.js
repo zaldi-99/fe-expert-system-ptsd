@@ -13,7 +13,7 @@ const AdminAddSymptom = () => {
   const handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/api/insert-symptom", {
+      .post("https://expert-system-ptsd.herokuapp.com/api/insert-symptom", {
         kode_gejala: kode_gejala,
         gejala: gejala,
         kategori: kategori,

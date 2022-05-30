@@ -24,7 +24,7 @@ const AvoidanceDetection = () => {
 
   const getAvoidanceSymptom = () => {
     axios
-      .get("http://localhost:3001/api/symptom")
+      .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(function (res) {
         setAvoidanceSymptom(res.data);
         setIsFetch(true);

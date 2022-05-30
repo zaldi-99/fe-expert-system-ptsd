@@ -13,7 +13,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/api/insert-feedback", {
+      .post("https://expert-system-ptsd.herokuapp.com/api/insert-feedback", {
         name: name,
         email: email,
         subject: subject,

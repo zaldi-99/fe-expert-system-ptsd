@@ -16,7 +16,7 @@ const Article = () => {
 
   const getArticleData = () => {
     axios
-      .get("http://localhost:3001/api/article-list")
+      .get("https://expert-system-ptsd.herokuapp.com/api/article-list")
       .then(res => {
         setData(res.data);
         setHeadline(res.data[0]);

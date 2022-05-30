@@ -1,14 +1,61 @@
+.result-top-section {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
 .result-conclusion {
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  background: #f0f0ef;
+  width: 600px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.greetings {
-  font-weight: 500;
-  margin-bottom: 1rem;
+.result-user-name {
+  font-size: 1.5rem;
 }
 
-.diagnose-result span {
+.result-user-name span {
   font-weight: 500;
+  text-transform: uppercase;
+}
+
+.result-user-desc {
+  font-size: 1.2rem;
+}
+
+.result-diagnose {
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  padding: 1rem 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid rgb(84, 194, 62);
+  background: rgba(173, 252, 163, 0.582);
+}
+
+.result-warning {
+  background: var(--red-1);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.result-answer-list {
+  width: 100%;
+  margin-left: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #f0f0ef;
+}
+
+.result-answer-list li {
+  border-bottom: 2px solid rgb(218, 215, 215);
+  padding-bottom: 0.5rem;
+}
+
+.result-answer-list p {
+  font-size: 1.2rem;
 }

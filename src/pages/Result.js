@@ -66,7 +66,50 @@ const Result = () => {
       <div className="criteria-header">
         <h1>Hasil</h1>
       </div>
-      <div className="greetings">
+      <div className="result-top-section">
+        <div className="result-conclusion">
+          <div className="result-user-name">
+            <p>
+              Halo, <span>{localStorage.getItem("user")}</span>
+            </p>
+          </div>
+          <div className="result-user-desc">
+            <p>
+              Berdasarkan jawaban yang anda berikan, sistem memberikan hasil :
+            </p>
+          </div>
+          {result.length !== 0 && (
+            <div className="result-diagnose">
+              <p>{forwardChaining()}</p>
+            </div>
+          )}
+          <div className="result-warning">
+            <p>Perhatian!!!</p>
+          </div>
+        </div>
+        <div className="result-answer-list">
+          <p>Jawaban yang anda berikan sebagai berikut :</p>
+          {result
+            .filter(ans => ans.answer === 1)
+            .map(ans => (
+              <div key={ans.question}>
+                <ul>
+                  <li>{ans.question}</li>
+                </ul>
+              </div>
+            ))}
+        </div>
+      </div>
+      <div
+        className="btn"
+        onClick={() => {
+          navigate("/");
+          localStorage.clear();
+        }}
+      >
+        Beranda
+      </div>
+      {/* <div className="greetings">
         {
           <h1>
             Halo, {localStorage.getItem("user")} <br />{" "}
@@ -103,7 +146,6 @@ const Result = () => {
                   </ul>
                 </div>
               ))}
-            <p>Kesimpulan : Memenuhi aturan ketiga</p>
             <div className="diagnose-information">
               <p>
                 Informasi lebih lanjut dapat dilihat pada halaman{" "}
@@ -132,7 +174,7 @@ const Result = () => {
         }}
       >
         Beranda
-      </button>
+      </button> */}
     </section>
   );
 };

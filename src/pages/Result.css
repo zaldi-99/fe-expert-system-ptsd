@@ -7,7 +7,7 @@
   border-radius: 0.5rem;
   padding: 2rem 1.5rem;
   background: #f0f0ef;
-  width: 600px;
+  width: 650px;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 .result-user-desc {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .result-diagnose {
@@ -70,7 +70,7 @@
 }
 
 .rule-conclusion {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .bottom-conclusion {
@@ -85,6 +85,13 @@
 
 .btn-conclusion {
   margin-left: 2rem;
+}
+
+.result-warning {
+  padding: 0.5rem;
+  color: var(--white);
+  font-size: 0.8rem;
+  text-align: justify;
 }
 
 @media only screen and (max-width: 540px) {

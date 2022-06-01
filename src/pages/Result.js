@@ -19,11 +19,11 @@ const Result = () => {
   const [arousal3, setArousal3] = useState();
   const [arousal4, setArousal4] = useState();
 
-  // const [showDetail, setShowDetail] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const d = JSON.parse(localStorage.getItem("temp"));
+    setResult(d);
     setTrauma(d[0]);
     setIntrusion1(d[1]);
     setIntrusion2(d[2]);
@@ -37,7 +37,6 @@ const Result = () => {
     setArousal2(d[10]);
     setArousal3(d[11]);
     setArousal4(d[12]);
-    setResult(d);
   }, []);
 
   const forwardChaining = () => {
@@ -160,7 +159,11 @@ const Result = () => {
             </div>
           )}
           <div className="result-warning">
-            <p>Perhatian!!!</p>
+            <p>
+              Hasil di atas merupakan hasil dari sistem, dimana sistem hanya
+              melakukan diagnosa berdasarkan gejala yang dialami. Penanganan
+              lebih lanjut segera temukan bantuan profesional yang anda percaya.
+            </p>
           </div>
         </div>
         <div className="result-answer-list">

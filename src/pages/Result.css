@@ -59,3 +59,73 @@
 .result-answer-list p {
   font-size: 1.2rem;
 }
+
+.result-bottom-section {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  background: #f0f0ef;
+  padding: 1rem 1.8rem;
+  border-radius: 0.5rem;
+}
+
+.rule-conclusion {
+  font-size: 1.2rem;
+}
+
+.bottom-conclusion {
+  flex: 1;
+}
+
+.divider {
+  border: 1px solid rgba(189, 189, 189, 0.726);
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.btn-conclusion {
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .result-page {
+    padding: 2rem;
+  }
+
+  .result-top-section {
+    flex-direction: column;
+  }
+
+  .result-user-desc {
+    font-size: 1rem;
+  }
+
+  .result-conclusion {
+    width: 300px;
+  }
+
+  .result-answer-list {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 320px;
+    height: 350px;
+    overflow: scroll;
+  }
+
+  .result-bottom-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .rule-conclusion {
+    font-size: 1rem;
+  }
+
+  .btn-conclusion {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}

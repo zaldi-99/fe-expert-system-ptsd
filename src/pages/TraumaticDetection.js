@@ -65,6 +65,8 @@ const TraumaticDetection = () => {
             <div className="detection-question">
               <p>Apakah anda...</p>
               <h1>{traumaticSymptom.gejala}</h1>
+            </div>
+            <div className="detection-question-desc">
               <p>
                 (seperti kecelakaan, kejahatan seksual, orang yang dicintai
                 meninggal karena pembunuhan atau bunuh diri)

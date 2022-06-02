@@ -12,3 +12,27 @@
 .detection-answer {
   display: flex;
 }
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .criteria-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .detection-question {
+    font-size: 1rem;
+  }
+
+  .detection-question h1 {
+    font-size: 1.3rem;
+  }
+
+  .detection-question p {
+    font-size: 1rem;
+  }
+
+  .detection-question-desc {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+  }
+}

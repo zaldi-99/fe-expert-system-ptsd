@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/Hero.css";
 import Logo from "../assets/hello.svg";
+import axios from "axios";
 
 const Hero = ({ fn }) => {
   const [isClose, setIsClose] = useState(false);
+
+  const initiate = () => {
+    axios.get("https://expert-system-ptsd.herokuapp.com/");
+  };
+
+  useEffect(() => {
+    initiate();
+  }, []);
 
   const closeHandler = () => {
     setIsClose(!isClose);
@@ -40,8 +49,11 @@ const Hero = ({ fn }) => {
           <div className="hero-disclaimer-wrapper">
             <p className="disclaimer-title">Disclaimer:</p>
             <p className="disclaimer-message">
-              Sistem ini tidak direkomendasikan apabila anda dalam kondisi
-              krisis yang mengancam hidup Anda.
+              {/* Sistem ini tidak direkomendasikan apabila anda dalam kondisi
+              krisis yang mengancam hidup Anda. */}
+              Sistem ini bukan merupakan layanan darurat, sistem ini ditujukan
+              untuk melakukan deteksi dini dari adanya kemungkinan gangguan
+              PTSD.
             </p>
           </div>
           <p className="hero-disclaimer-close" onClick={closeHandler}>

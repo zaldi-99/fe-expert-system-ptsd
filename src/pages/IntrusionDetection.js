@@ -11,7 +11,7 @@ const IntrusionDetection = () => {
   const [intrusionSymptom, setIntrusionSymptom] = useState([]);
   const [answer, setAnswer] = useState(null);
   const [isFetch, setIsFetch] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const answers = useContext(AnswerContext);
 
@@ -19,6 +19,7 @@ const IntrusionDetection = () => {
     axios
       .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(function (res) {
+        setIsLoading(true);
         setIntrusionSymptom(res.data);
         setIsFetch(true);
         setIsLoading(false);

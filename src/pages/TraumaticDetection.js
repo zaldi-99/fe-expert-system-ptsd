@@ -15,7 +15,7 @@ const TraumaticDetection = () => {
 
   const answers = useContext(AnswerContext);
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleProcess = () => {
     if (traumaticAnswer === null) {
@@ -36,6 +36,7 @@ const TraumaticDetection = () => {
     axios
       .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
       .then(res => {
+        setIsLoading(true);
         setTraumaticSymptom(res.data[0]);
         console.log(res);
         setIsLoading(false);

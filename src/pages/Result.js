@@ -43,12 +43,6 @@ const Result = () => {
     const positif = "Positif";
     const negatif = "Negatif";
 
-    // for (let i = 1; i < result.length; i++) {
-    //   if (result[i].answer === 0) {
-    //     return negatif;
-    //   }
-    // }
-
     // If user not experiencing trauma (Rule 1)
     if (trauma.answer === 0) {
       return negatif;
@@ -73,6 +67,14 @@ const Result = () => {
       return positif;
     }
     if (
+      mood1.answer === 1 ||
+      mood2.answer === 1 ||
+      mood3.answer === 1 ||
+      mood4.answer === 1
+    ) {
+      return negatif;
+    }
+    if (
       (arousal1.answer === 1 && arousal2.answer === 1) ||
       (arousal1.answer === 1 && arousal3.answer === 1) ||
       (arousal1.answer === 1 && arousal4.answer === 1) ||
@@ -81,23 +83,38 @@ const Result = () => {
       (arousal3.answer === 1 && arousal4.answer === 1)
     ) {
       return positif;
+    }
+    if (
+      arousal1.answer === 1 ||
+      arousal2.answer === 1 ||
+      arousal3.answer === 1 ||
+      arousal4.answer === 1
+    ) {
+      return negatif;
     } else {
-      return <p>Hasil ...</p>;
+      for (let i = 1; i < result.length; i++) {
+        if (result[i].answer === 0) {
+          return negatif;
+        }
+      }
     }
   };
 
   const checkRule = () => {
-    const rule1 = "Memenuhi aturan pertama";
-    const rule2 = "Memenuhi aturan kedua";
-    const rule3 = "Memenuhi aturan ketiga";
-    const rule4 = "Memenuhi aturan keempat";
-    const rule5 = "Memenuhi aturan kelima";
-
-    // for (let i = 1; i < result.length; i++) {
-    //   if (result[i].answer === 0) {
-    //     return negatif;
-    //   }
-    // }
+    const rule1 = "Tidak mengalami peristiwa traumatis";
+    const rule2 = "Mengalami peristiwa traumatis diikuti dengan gejala intrusi";
+    const rule3 =
+      "Mengalami peristiwa traumatis diikuti dengan gejala penghindaran";
+    const rule4 =
+      "Mengalami peristiwa traumatis diikuti dengan gejala perubahan suasana hati";
+    const rule5 =
+      "Mengalami peristiwa traumatis tetapi hanya diikuti dengan satu gejala penghindaran";
+    const rule6 =
+      "Mengalami peristiwa traumatis diikuti dengan gejala perubahan gairah dan reaktivitas";
+    const rule7 =
+      "Mengalami peristiwa traumatis tetapi hanya diikuti dengan satu gejala perubahan gairah dan reaktivitas";
+    const rule8 =
+      "Mengalami peristiwa traumatis tetapi tidak diikuti gejala PTSD";
 
     // If user not experiencing trauma (Rule 1)
     if (trauma.answer === 0) {
@@ -123,6 +140,14 @@ const Result = () => {
       return rule4;
     }
     if (
+      mood1.answer === 1 ||
+      mood2.answer === 1 ||
+      mood3.answer === 1 ||
+      mood4.answer === 1
+    ) {
+      return rule5;
+    }
+    if (
       (arousal1.answer === 1 && arousal2.answer === 1) ||
       (arousal1.answer === 1 && arousal3.answer === 1) ||
       (arousal1.answer === 1 && arousal4.answer === 1) ||
@@ -130,9 +155,21 @@ const Result = () => {
       (arousal2.answer === 1 && arousal4.answer === 1) ||
       (arousal3.answer === 1 && arousal4.answer === 1)
     ) {
-      return rule5;
+      return rule6;
+    }
+    if (
+      arousal1.answer === 1 ||
+      arousal2.answer === 1 ||
+      arousal3.answer === 1 ||
+      arousal4.answer === 1
+    ) {
+      return rule7;
     } else {
-      return <p>Hasil ...</p>;
+      for (let i = 1; i < result.length; i++) {
+        if (result[i].answer === 0) {
+          return rule8;
+        }
+      }
     }
   };
 
@@ -208,72 +245,6 @@ const Result = () => {
           </button>
         </div>
       </div>
-      {/* <div className="greetings">
-        {
-          <h1>
-            Halo, {localStorage.getItem("user")} <br />{" "}
-            <span>
-              Terima kasih telah menggunakan sistem pakar diagnosa PTSD.
-            </span>{" "}
-          </h1>
-        }
-      </div>
-      <div className="result-conclusion">
-        <div className="diagnose-result">
-          {result.length !== 0 && (
-            <h3>
-              Berdasarkan jawaban yang anda berikan, sistem memberikan hasil :{" "}
-              <span>{forwardChaining()}</span>
-            </h3>
-          )}
-          {showDetail ? (
-            <button onClick={() => setShowDetail(false)}>Tutup</button>
-          ) : null}
-        </div>
-        {showDetail ? (
-          <div className="user-answer">
-            <p>Jawaban yang anda berikan sebagai berikut :</p>
-            {result
-              .filter(ans => ans.answer === 1)
-              .map(ans => (
-                <div key={ans.question}>
-                  <ul>
-                    <li>
-                      {" "}
-                      {ans.question} ({ans.code})
-                    </li>
-                  </ul>
-                </div>
-              ))}
-            <div className="diagnose-information">
-              <p>
-                Informasi lebih lanjut dapat dilihat pada halaman{" "}
-                <a
-                  href="/information"
-                  onClick={() => {
-                    localStorage.clear();
-                  }}
-                >
-                  Informasi
-                </a>
-              </p>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <button onClick={() => setShowDetail(true)}>Lihat Detail</button>
-          </div>
-        )}
-      </div>
-
-      <button
-        onClick={() => {
-          navigate("/");
-          localStorage.clear();
-        }}
-      >
-        Beranda
-      </button> */}
     </section>
   );
 };

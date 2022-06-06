@@ -49,7 +49,11 @@ const MoodDetection = () => {
   return (
     <section className="detection-page">
       <div className="criteria-header">
-        <h1>Kriteria 4 : Diagnosa Perubahan Mood</h1>
+        <h1>Kriteria 4 : Diagnosa Perubahan Suasana Hati</h1>
+        <p>
+          Kondisi dimana seseorang mengalami perubahan negatif pada suasana
+          hati.
+        </p>
       </div>
       {isFetch ? (
         <div>

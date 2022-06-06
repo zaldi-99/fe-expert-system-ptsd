@@ -23,7 +23,7 @@ const Information = () => {
             Posttraumatic stress disorder (PTSD) atau gangguan stress
             pascatrauma adalah gangguan mental yang terjadi setelah seseorang
             mengalami atau menyaksikan peristiwa traumatis. Gejala yang identik
-            dengan PTSD adalah teringkat kembali pada kejadian traumatis, namun
+            dengan PTSD adalah teringat kembali pada kejadian traumatis, namun
             tidak semua orang yang teringat dengan peristiwa traumatis berarti
             terserang PTSD. Silahkan simak video dan informasi lebih lanjut
             seputar PTSD pada halaman artikel.

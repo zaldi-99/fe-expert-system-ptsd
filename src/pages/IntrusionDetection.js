@@ -50,6 +50,10 @@ const IntrusionDetection = () => {
     <section className="detection-page">
       <div className="criteria-header">
         <h1>Kriteria 2 : Diagnosa Intrusi</h1>
+        <p>
+          Kondisi dimana seseorang mengalami ingatan yang tidak diinginkan,
+          bersifat mengganggu, dan datang berulang.
+        </p>
       </div>
       {isFetch ? (
         <div>

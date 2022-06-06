@@ -54,11 +54,7 @@ const Article = () => {
                   {headline.deskripsi}
                 </p>
                 <button className="btn">
-                  <a
-                    href="https://www.kompas.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href={headline.url} target="_blank" rel="noreferrer">
                     Lihat
                   </a>
                 </button>

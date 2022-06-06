@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 import ContactForm from "../components/ContactForm";
+import SymptomCriteria from "../components/SymptomCriteria";
 
 const Home = () => {
   const [isShow, setIsShow] = useState(false);
@@ -22,6 +23,7 @@ const Home = () => {
         }}
       />
       <Information />
+      <SymptomCriteria />
       <ContactForm />
       <Footer />
       <Modal show={isShow} closeModal={() => setIsShow(false)} />

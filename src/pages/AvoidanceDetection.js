@@ -45,6 +45,11 @@ const AvoidanceDetection = () => {
     <section className="detection-page">
       <div className="criteria-header">
         <h1>Kriteria 3 : Diagnosa Penghindaran</h1>
+        <p>
+          Kondisi dimana seseroang mencoba untuk menghindari berpikir atau
+          berbicara tentang peristiwa traumatis, ataupun segala kegiatan yang
+          mengingatkan kembali pada kejadian traumatis
+        </p>
       </div>
       {isFetch ? (
         <div className="question-container">

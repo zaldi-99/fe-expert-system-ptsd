@@ -52,6 +52,10 @@ const ArousalDetection = () => {
     <section className="detection-page">
       <div className="criteria-header">
         <h1>Kriteria 5 : Diagnosa Perubahan Gairah dan Reaktivitas</h1>
+        <p>
+          Kondisi dimana seseorang mengalami perubahan reaksi dan gairah yang
+          mulai terjadi atau memburuk setelah peristiwa traumatis terjadi.
+        </p>
       </div>
       {isFetch ? (
         <div>

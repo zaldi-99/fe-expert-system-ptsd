@@ -56,8 +56,12 @@
   padding-bottom: 0.5rem;
 }
 
-.result-answer-list p {
+.result-answer-list-title {
   font-size: 1.2rem;
+}
+
+.result-answer-list-title .term {
+  font-size: 12px;
 }
 
 .result-bottom-section {

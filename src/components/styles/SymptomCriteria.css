@@ -1,0 +1,36 @@
+.criteria-desc {
+  font-size: 20px;
+}
+
+.symptom-list {
+  font-size: 18px;
+  text-align: justify;
+}
+
+.regards {
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-1);
+}
+
+@media only screen and (max-width: 540px) {
+  /* For handphone: */
+  .symptom-container {
+    padding: 0rem 2rem;
+  }
+
+  .criteria-desc {
+    font-size: 18px;
+  }
+
+  .symptom-list {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+  .regards {
+    font-size: 14px;
+  }
+}

@@ -68,8 +68,9 @@ const TraumaticDetection = () => {
             </div>
             <div className="detection-question-desc">
               <p>
-                (seperti kecelakaan, kejahatan seksual, orang yang dicintai
-                meninggal karena pembunuhan atau bunuh diri)
+                (Mengalami atau melihat langsung peristiwa traumatis seperti
+                kecelakaan, kejahatan fisik atau seksual, orang yang dicintai
+                meninggal, dan sebagainya)
               </p>
             </div>
             <div className="detection-answer">

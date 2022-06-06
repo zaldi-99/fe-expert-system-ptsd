@@ -204,7 +204,10 @@ const Result = () => {
           </div>
         </div>
         <div className="result-answer-list">
-          <p>Jawaban yang anda berikan sebagai berikut :</p>
+          <div className="result-answer-list-title">
+            <p>Gejala yang anda alami adalah sebagai berikut* :</p>
+            <p className="term">*berdasarkan jawaban yang anda berikan</p>
+          </div>
           {result
             .filter(ans => ans.answer === 1)
             .map(ans => (
@@ -244,6 +247,9 @@ const Result = () => {
             Beranda
           </button>
         </div>
+      </div>
+      <div className="regards">
+        <p>Terima kasih telah menggunakan sistem pakar diagnosa PTSD</p>
       </div>
     </section>
   );

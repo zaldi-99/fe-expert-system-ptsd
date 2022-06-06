@@ -18,10 +18,12 @@ const AboutSystem = () => {
             </div>
             <p>
               Website ini merupakan aplikasi sistem pakar yang dibuat dengan
-              tujuan membantu seseorang melakukan deteksi dini terhadap gangguan
-              stress pasca trauma yang kemungkinan terjadi pada seseorang dengan
-              pengalaman traumatis. Diharapkan dengan dilakukannya deteksi dini
-              maka pengguna dapat segera mendapatkan penanganan yang tepat.
+              tujuan membantu seseorang melakukan deteksi dini terhadap
+              posttraumatic stress disorder atau gangguan stress pasca trauma
+              yang kemungkinan terjadi pada seseorang dengan pengalaman
+              traumatis. Diharapkan dengan dilakukannya deteksi dini maka
+              pengguna dapat segera mendapatkan penanganan yang tepat sebelum
+              adanya gangguan lain terjadi.
             </p>
           </div>
           <div className="about-information-item">
@@ -33,7 +35,8 @@ const AboutSystem = () => {
               informasi yang mengandung beberapa pengetahuan dari satu atau
               lebih pakar manusia terkait suatu bidang yang cenderung spesifik.
               Pada sistem pakar diagnosa PTSD ini menggunakan bantuan dari
-              seorang pakar yaitu psikolog dari UMN.
+              seorang pakar psikolog klinis dewasa yaitu Sonny Tirta Luzanil,
+              M.Psi,. Psikolog.
             </p>
           </div>
           <div className="about-information-item">
@@ -44,35 +47,41 @@ const AboutSystem = () => {
               Forward chaining merupakan salah satu metode yang dapat digunakan
               dalam pembuatan sistem pakar. Pada metode ini dilakukan pelacakan
               kedepan berdasarkan pada fakta yang ada kemudian mengarahkan pada
-              kesimpulan. Dalam menentukan seseorang terdiagnosa ptsd atau tidak
-              adalah dengan menerapkan aturan-aturan yang diambil bersama dengan
-              pakar dan juga buku DSM-V. Aturan tersebut adalah sebagai berikut
-              :
+              kesimpulan. Dalam menentukan seseorang terdiagnosa ptsd adalah
+              dengan menerapkan aturan-aturan yang diambil bersama dengan pakar
+              dan juga buku DSM-5. Aturan tersebut adalah sebagai berikut :
             </p>
             <ol>
               <li>
-                Jika pengguna tidak pernah mengalami peristiwa traumatis, maka
-                negatif PTSD
+                Jika pengguna <span>tidak pernah</span> mengalami peristiwa
+                traumatis, maka <span>negatif</span> PTSD
               </li>
               <li>
-                Jika pengguna pernah mengalami peristiwa traumatis diikuti
-                dengan adanya satu atau lebih gejala intrusi (intrusion) maka
-                positif PTSD.
+                Jika pengguna <span>pernah</span> mengalami peristiwa traumatis
+                diikuti dengan adanya{" "}
+                <span>satu atau lebih gejala intrusi (intrusion)</span> maka
+                <span> positif</span> PTSD.
               </li>
               <li>
-                Jika pengguna pernah mengalami peristiwa traumatis diikuti
-                dengan adanya satu atau lebih gejala penghindaran (avoidance)
-                maka positif PTSD.
+                Jika pengguna <span>pernah</span> mengalami peristiwa traumatis
+                diikuti dengan adanya{" "}
+                <span>satu atau lebih gejala penghindaran (avoidance) </span>
+                maka <span>positif</span> PTSD.
               </li>
               <li>
-                Jika pengguna pernah mengalami peristiwa traumatis diikuti
-                dengan adanya dua atau lebih gejala perubahan suansa hati (mood)
-                maka positif PTSD.
+                Jika pengguna <span>pernah</span> mengalami peristiwa traumatis
+                diikuti dengan adanya{" "}
+                <span>dua atau lebih gejala perubahan suansa hati (mood)</span>{" "}
+                maka <span>positif</span> PTSD.
               </li>
               <li>
-                Jika pengguna pernah mengalami peristiwa traumatis diikuti
-                dengan adanya dua atau lebih gejala perubahan gairah dan
-                reaktivitas (arousal) maka positif PTSD.
+                Jika pengguna <span>pernah</span> mengalami peristiwa traumatis
+                diikuti dengan adanya{" "}
+                <span>
+                  dua atau lebih gejala perubahan gairah dan reaktivitas
+                  (arousal)
+                </span>{" "}
+                maka <span>positif</span> PTSD.
               </li>
             </ol>
             <p>
@@ -87,9 +96,9 @@ const AboutSystem = () => {
               <h3>Pengembang</h3>
             </div>
             <p>
-              Aplikasi ini dibuat oleh Mochamad Rizky Zaldi, mahasiswa
-              informatika Universitas Multimedia Nusantara untuk memenuhi tugas
-              akhir sebagai syarat kelulusan.
+              Aplikasi ini dibuat oleh Mochamad Rizky Zaldi, mahasiswa Program
+              Studi Informatika Universitas Multimedia Nusantara dengan tujuan
+              untuk memenuhi tugas akhir sebagai syarat kelulusan.
             </p>
           </div>
         </div>

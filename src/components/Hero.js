@@ -31,9 +31,12 @@ const Hero = ({ fn }) => {
         <div className="hero-subtitle">
           <p>
             Website ini merupakan sebuah sistem pakar yang dapat melakukan
-            diagnosa dari kemungkinan pengguna menderita posttraumatic stress
-            disorder. Silakan klik 'Mulai Test' untuk menggunakan fitur
-            diagnosa.
+            deteksi dini dari kemungkinan seseorang menderita posttraumatic
+            stress disorder. Proses diagnosa dilakukan berdasarkan kriteria
+            gejala dari PTSD yaitu diagnosa trauma, diagnosa intrusi/intrusif,
+            diagnosa penghindaran, diagnosa perubahan suasana hati, dan
+            perubahan gairah dan reaktivitas. Silakan klik 'Mulai Test' untuk
+            menggunakan fitur diagnosa.
           </p>
         </div>
         <div className="btn" onClick={fn}>

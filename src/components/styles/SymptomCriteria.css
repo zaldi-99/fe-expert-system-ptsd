@@ -7,14 +7,6 @@
   text-align: justify;
 }
 
-.regards {
-  margin-bottom: 1rem;
-  padding: 1.2rem;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--gray-1);
-}
-
 @media only screen and (max-width: 540px) {
   /* For handphone: */
   .symptom-container {
@@ -30,7 +22,5 @@
     padding-right: 10px;
   }
 
-  .regards {
-    font-size: 14px;
-  }
+ 
 }

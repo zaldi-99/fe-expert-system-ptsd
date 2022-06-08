@@ -98,6 +98,14 @@
   text-align: justify;
 }
 
+.regards {
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-1);
+}
+
 @media only screen and (max-width: 540px) {
   /* For handphone: */
   .result-page {
@@ -138,5 +146,9 @@
   .btn-conclusion {
     margin-top: 1rem;
     margin-left: 0;
+  }
+
+  .regards {
+    font-size: 14px;
   }
 }

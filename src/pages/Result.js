@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import "./Result.css";
 
 const Result = () => {
@@ -195,6 +196,7 @@ const Result = () => {
               <p>{forwardChaining()}</p>
             </div>
           )}
+
           <div className="result-warning">
             <p>
               Hasil di atas merupakan hasil dari sistem, dimana sistem hanya
@@ -229,8 +231,8 @@ const Result = () => {
           <div className="divider"></div>
           <div className="more-info">
             <p>
-              Informasi lebih lanjut mengenai aturan dapat dilihat{" "}
-              <a href="/about" onClick={() => localStorage.clear()}>
+              Informasi lebih lanjut dapat dilihat{" "}
+              <a href="/about" target="_blank">
                 di sini
               </a>
             </p>
@@ -240,7 +242,13 @@ const Result = () => {
           <button
             className="btn"
             onClick={() => {
-              navigate("/");
+              swal({
+                title: "Terima kasih!",
+                text: "Semoga sehat selalu",
+                icon: "success",
+              }).then(() => {
+                navigate("/");
+              });
               localStorage.clear();
             }}
           >
@@ -249,8 +257,12 @@ const Result = () => {
         </div>
       </div>
       <div className="regards">
-        <p>Terima kasih telah menggunakan sistem pakar diagnosa PTSD</p>
+        <i class="fa-solid fa-circle-info"></i>{" "}
+        <span>Sistem tidak menyimpan riwayat hasil diagnosa</span>
       </div>
+      {/* <div className="regards">
+        <p>Terima kasih telah menggunakan sistem pakar diagnosa PTSD</p>
+      </div> */}
     </section>
   );
 };

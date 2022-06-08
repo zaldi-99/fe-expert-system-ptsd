@@ -19,7 +19,7 @@ const Modal = ({ show, closeModal }) => {
       .then(() => {
         swal({
           title: "Berhasil!",
-          text: "Silakan menjawab!",
+          text: "Silakan menjawab, terdapat 13 pertanyaan yang dibagi kedalam 5 kriteria gejala",
           icon: "success",
         }).then(() => {
           navigate("/traumatic-detection");

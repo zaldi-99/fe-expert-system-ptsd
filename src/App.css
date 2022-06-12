@@ -75,6 +75,32 @@ a {
   margin: auto;
 }
 
+.btn-red {
+  background-color: #fd4a2b;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-green {
+  background-color: #45a049;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 .btn,
 .next-btn {
   background-color: #8d8daa;

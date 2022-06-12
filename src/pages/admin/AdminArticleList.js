@@ -10,17 +10,21 @@ const AdminArticleList = () => {
   const navigate = useNavigate();
 
   const getAllArticle = () => {
-    axios.get("https://expert-system-ptsd.herokuapp.com/api/article-list").then(res => {
-      console.log(res.data);
-      setArticleList(res.data);
-    });
+    axios
+      .get("https://expert-system-ptsd.herokuapp.com/api/article-list")
+      .then(res => {
+        console.log(res.data);
+        setArticleList(res.data);
+      });
   };
   useEffect(() => {
     getAllArticle();
   }, []);
 
   const deleteData = id_artikel => {
-    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/article/${id_artikel}`);
+    axios.delete(
+      `https://expert-system-ptsd.herokuapp.com/api/delete/article/${id_artikel}`
+    );
   };
 
   const columns = [
@@ -50,7 +54,11 @@ const AdminArticleList = () => {
     },
     {
       name: "URL",
-      selector: row => row.url,
+      cell: row => (
+        <div>
+          <p>{row.url}</p>
+        </div>
+      ),
     },
     {
       name: "Action",
@@ -84,7 +92,10 @@ const AdminArticleList = () => {
           >
             <i className="fa-solid fa-trash-can"></i>
           </button>
-          <button id={row.id_artikel}>
+          <button
+            id={row.id_artikel}
+            onClick={() => navigate(`/admin-edit-article/${row.id_artikel}`)}
+          >
             <i className="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
@@ -103,8 +114,13 @@ const AdminArticleList = () => {
             padding: "0rem 4rem",
           }}
         >
-          <button onClick={() => navigate(-1)}>Kembali</button>
-          <button onClick={() => navigate("/admin-add-article")}>
+          <button className="btn" onClick={() => navigate(-1)}>
+            Kembali
+          </button>
+          <button
+            className="btn-green"
+            onClick={() => navigate("/admin-add-article")}
+          >
             Tambah Artikel
           </button>
         </div>

@@ -1,37 +1,18 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AdminAddArticle = () => {
+const AdminEditArticle = () => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [source, setSource] = useState("");
   const [url, setUrl] = useState("");
 
-  const navigate = useNavigate();
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    axios
-      .post("https://expert-system-ptsd.herokuapp.com/api/article", {
-        judul: title,
-        deskripsi: description,
-        sumber: source,
-        url: url,
-      })
-      .then(res => {
-        console.log(res);
-        navigate("/admin-article-list");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
   return (
     <div className="add-symptom-page">
       <div className="add-symptom-header">
-        <h1>Tambah Artikel</h1>
+        <h1>Edit Artikel</h1>
       </div>
       <section className="add-symptom-content">
         <div className="back-button">
@@ -40,11 +21,7 @@ const AdminAddArticle = () => {
           </button>
         </div>
         <div className="add-symptom-form">
-          <form
-            onSubmit={e => {
-              handleSubmit(e);
-            }}
-          >
+          <form>
             <label for="name">Judul Artikel:</label> <br />
             <input
               className="input-uppercase"
@@ -89,7 +66,7 @@ const AdminAddArticle = () => {
               required
             />
             <br />
-            <input type="submit" value="Kirim" className="submit-btn" />
+            <input type="submit" value="Simpan" className="submit-btn" />
           </form>
         </div>
       </section>
@@ -97,4 +74,4 @@ const AdminAddArticle = () => {
   );
 };
 
-export default AdminAddArticle;
+export default AdminEditArticle;

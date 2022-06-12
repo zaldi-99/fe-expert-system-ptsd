@@ -22,7 +22,9 @@ const AdminUsersList = () => {
   };
 
   const deleteUser = id_pengguna => {
-    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/user/${id_pengguna}`);
+    axios.delete(
+      `https://expert-system-ptsd.herokuapp.com/api/delete/user/${id_pengguna}`
+    );
   };
 
   useEffect(() => {
@@ -85,7 +87,9 @@ const AdminUsersList = () => {
             padding: "0rem 4rem",
           }}
         >
-          <button onClick={() => navigate(-1)}>Kembali</button>
+          <button className="btn" onClick={() => navigate(-1)}>
+            Kembali
+          </button>
         </div>
         <section>
           <DataTable columns={columns} data={users} pagination />

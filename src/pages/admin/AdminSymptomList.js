@@ -10,17 +10,21 @@ const AdminListSymptom = () => {
   const navigate = useNavigate();
 
   const getAllSymptom = () => {
-    axios.get("https://expert-system-ptsd.herokuapp.com/api/symptom").then(res => {
-      console.log(res.data);
-      setSymptom(res.data);
-    });
+    axios
+      .get("https://expert-system-ptsd.herokuapp.com/api/symptom")
+      .then(res => {
+        console.log(res.data);
+        setSymptom(res.data);
+      });
   };
   useEffect(() => {
     getAllSymptom();
   }, []);
 
   const deleteData = id_gejala => {
-    axios.delete(`https://expert-system-ptsd.herokuapp.com/api/delete/symptom/${id_gejala}`);
+    axios.delete(
+      `https://expert-system-ptsd.herokuapp.com/api/delete/symptom/${id_gejala}`
+    );
   };
 
   const columns = [
@@ -74,7 +78,7 @@ const AdminListSymptom = () => {
           </button>
           <button
             id={row.id_gejala}
-            onClick={() => navigate(`/edit-symptom/${row.id_gejala}`)}
+            onClick={() => navigate(`/admin-edit-symptom/${row.id_gejala}`)}
           >
             <i className="fa-solid fa-pen-to-square"></i>
           </button>
@@ -94,8 +98,13 @@ const AdminListSymptom = () => {
             padding: "0rem 4rem",
           }}
         >
-          <button onClick={() => navigate("/admin")}>Beranda</button>
-          <button onClick={() => navigate("/admin-add-symptom")}>
+          <button className="btn" onClick={() => navigate("/admin")}>
+            Beranda
+          </button>
+          <button
+            className="btn-green"
+            onClick={() => navigate("/admin-add-symptom")}
+          >
             Tambah Gejala
           </button>
         </div>

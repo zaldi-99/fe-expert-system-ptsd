@@ -31,7 +31,9 @@ const AdminAddSymptom = () => {
       </div>
       <section className="add-symptom-content">
         <div className="back-button">
-          <button onClick={() => navigate(-1)}>Kembali</button>
+          <button className="btn" onClick={() => navigate(-1)}>
+            Kembali
+          </button>
         </div>
         <div className="add-symptom-form">
           <form
@@ -50,18 +52,6 @@ const AdminAddSymptom = () => {
               }}
               required
             />
-            <br />
-            <label for="lname">Gejala:</label> <br />
-            <input
-              type="text"
-              id="gejala"
-              name="gejala"
-              onChange={e => {
-                setGejala(e.target.value);
-              }}
-              required
-            />
-            <br />
             <label for="lname">Kategori:</label> <br />
             <select
               name="kategori"
@@ -78,7 +68,17 @@ const AdminAddSymptom = () => {
               <option value="Mood">Perubahan Mood</option>
               <option value="Gairah">Perubahan Gairah</option>
             </select>
-            <br />
+            <label for="lname">Gejala:</label> <br />
+            <textarea
+              type="text"
+              id="gejala"
+              name="gejala"
+              onChange={e => {
+                setGejala(e.target.value);
+              }}
+              className="admin-form-long"
+              required
+            />
             <input type="submit" value="Kirim" className="submit-btn" />
           </form>
         </div>

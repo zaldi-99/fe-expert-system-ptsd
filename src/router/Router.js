@@ -19,7 +19,6 @@ import AdminEditSymptom from "../pages/admin/AdminEditSymptom";
 import Article from "../pages/Article";
 import AdminMessageList from "../pages/admin/AdminMessageList";
 import AboutSystem from "../pages/AboutSystem";
-import AdminEditArticle from "../pages/admin/AdminEditArticle";
 
 const Router = () => {
   return (
@@ -39,7 +38,6 @@ const Router = () => {
         <Route path="admin-symptom-list" element={<AdminSymptomList />} />
         <Route path="admin-add-symptom" element={<AdminAddSymptom />} />
         <Route path="admin-edit-symptom/:id" element={<AdminEditSymptom />} />
-        <Route path="admin-edit-article/:id" element={<AdminEditArticle />} />
         <Route path="admin-user-list" element={<AdminUsersList />} />
         <Route path="admin-article-list" element={<AdminArticleList />} />
         <Route path="admin-add-article" element={<AdminAddArticle />} />

@@ -17,7 +17,6 @@ const LandingAdmin = () => {
 
   useEffect(() => {
     let time = updateTime;
-
     setdateToFormat(time);
   }, []);
   return (

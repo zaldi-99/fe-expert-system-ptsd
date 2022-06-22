@@ -109,7 +109,7 @@ const Result = () => {
     const rule4 =
       "Mengalami peristiwa traumatis diikuti dengan gejala perubahan suasana hati";
     const rule5 =
-      "Mengalami peristiwa traumatis tetapi hanya diikuti dengan satu gejala penghindaran";
+      "Mengalami peristiwa traumatis tetapi hanya diikuti dengan satu gejala perubahan suasana hati";
     const rule6 =
       "Mengalami peristiwa traumatis diikuti dengan gejala perubahan gairah dan reaktivitas";
     const rule7 =
@@ -242,14 +242,17 @@ const Result = () => {
           <button
             className="btn"
             onClick={() => {
+              // localStorage.clear();
+              // navigate("/");
               swal({
                 title: "Terima kasih!",
                 text: "Semoga sehat selalu",
                 icon: "success",
               }).then(() => {
+                window.localStorage.clear();
                 navigate("/");
+                window.location.reload();
               });
-              localStorage.clear();
             }}
           >
             Beranda

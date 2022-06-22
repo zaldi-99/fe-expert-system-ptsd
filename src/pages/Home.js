@@ -18,7 +18,7 @@ const Home = () => {
       <Navbar />
       <Hero
         fn={() => {
-          window.localStorage.clear();
+          localStorage.clear();
           setIsShow(true);
         }}
       />

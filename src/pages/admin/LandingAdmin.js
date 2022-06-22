@@ -18,6 +18,7 @@ const LandingAdmin = () => {
   useEffect(() => {
     let time = updateTime;
     setdateToFormat(time);
+    // eslint-disable-next-line
   }, []);
   return (
     <Fragment>

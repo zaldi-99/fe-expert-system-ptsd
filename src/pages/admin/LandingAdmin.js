@@ -9,14 +9,14 @@ const LandingAdmin = () => {
   const currentDateTime = moment();
   const [dateToFormat, setdateToFormat] = useState(currentDateTime);
 
-  const updateTime = () => {
-    let clock = currentDateTime;
-  };
+  // const updateTime = () => {
+  //   let clock = currentDateTime;
+  // };
 
-  setInterval(updateTime, 1000);
+  setInterval(currentDateTime, 1000);
 
   useEffect(() => {
-    let time = updateTime;
+    let time = currentDateTime;
     setdateToFormat(time);
     // eslint-disable-next-line
   }, []);

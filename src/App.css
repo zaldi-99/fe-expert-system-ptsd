@@ -124,7 +124,28 @@ a {
   font-size: 0.85rem;
 }
 
-/* Style for GAD7 Question */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  margin-top: 0.8rem;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #45a049;
+}
+
 .custom-radio input {
   display: none;
 }

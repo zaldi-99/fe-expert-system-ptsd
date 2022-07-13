@@ -211,8 +211,8 @@ const Result = () => {
             <p className="term">*berdasarkan jawaban yang anda berikan</p>
           </div>
           {result
-            .filter(ans => ans.answer === 1)
-            .map(ans => (
+            .filter((ans) => ans.answer === 1)
+            .map((ans) => (
               <div key={ans.question}>
                 <ul>
                   <li>{ans.question}</li>
@@ -242,8 +242,6 @@ const Result = () => {
           <button
             className="btn"
             onClick={() => {
-              // localStorage.clear();
-              // navigate("/");
               swal({
                 title: "Terima kasih!",
                 text: "Semoga sehat selalu",
@@ -263,9 +261,6 @@ const Result = () => {
         <i class="fa-solid fa-circle-info"></i>{" "}
         <span>Sistem tidak menyimpan riwayat hasil diagnosa</span>
       </div>
-      {/* <div className="regards">
-        <p>Terima kasih telah menggunakan sistem pakar diagnosa PTSD</p>
-      </div> */}
     </section>
   );
 };
